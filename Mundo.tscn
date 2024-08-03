@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvn2ohnvye0o7"]
+[gd_scene load_steps=3 format=3 uid="uid://cvn2ohnvye0o7"]
 
 [ext_resource type="PackedScene" uid="uid://ca83gaaglxobt" path="res://Jugador.tscn" id="2_ny15v"]
-[ext_resource type="Texture2D" uid="uid://1nyjdyu4lnt5" path="res://assets/images/humo boceto.png" id="2_r88ep"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hyrt1"]
 size = Vector2(108.444, 73.373)
@@ -31,9 +30,7 @@ visible = false
 
 [node name="fondo" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(-54, 0)
-texture = ExtResource("2_r88ep")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="humo" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-texture = ExtResource("2_r88ep")

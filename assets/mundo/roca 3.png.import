@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1nyjdyu4lnt5"
-path="res://.godot/imported/humo boceto.png-6ec2afb6d312fc6ff85c49ed5a45bc9c.ctex"
+uid="uid://b4xxfp3v3ho5b"
+path="res://.godot/imported/roca 3.png-ac1dd1514f9e87e0357f9ba674b90d15.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/humo boceto.png"
-dest_files=["res://.godot/imported/humo boceto.png-6ec2afb6d312fc6ff85c49ed5a45bc9c.ctex"]
+source_file="res://assets/mundo/roca 3.png"
+dest_files=["res://.godot/imported/roca 3.png-ac1dd1514f9e87e0357f9ba674b90d15.ctex"]
 
 [params]
 

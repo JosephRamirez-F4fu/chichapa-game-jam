@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b670gvhj6p6xy"
-path="res://.godot/imported/fondo.jpg-7066922f36aa8df68a6c13adfc30932a.ctex"
+uid="uid://bjomy251fshno"
+path="res://.godot/imported/tanque.jpg-dea218e9c46bf9dd6f62a5a9902abcef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/fondo.jpg"
-dest_files=["res://.godot/imported/fondo.jpg-7066922f36aa8df68a6c13adfc30932a.ctex"]
+source_file="res://assets/jugador/tanque.jpg"
+dest_files=["res://.godot/imported/tanque.jpg-dea218e9c46bf9dd6f62a5a9902abcef.ctex"]
 
 [params]
 
