@@ -1,9 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvn2ohnvye0o7"]
+[gd_scene load_steps=5 format=3 uid="uid://cvn2ohnvye0o7"]
 
 [ext_resource type="PackedScene" uid="uid://ca83gaaglxobt" path="res://Jugador.tscn" id="2_ny15v"]
+[ext_resource type="PackedScene" uid="uid://vh08w3iktclu" path="res://enemigo_tipo_1.tscn" id="2_peyeo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hyrt1"]
 size = Vector2(108.444, 73.373)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_rjq1x"]
 
 [node name="Mundo" type="Node2D"]
 
@@ -30,7 +33,11 @@ visible = false
 
 [node name="fondo" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(-54, 0)
+texture = SubResource("ViewportTexture_rjq1x")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="humo" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+
+[node name="eneimago_tipo_1" parent="." instance=ExtResource("2_peyeo")]
+position = Vector2(967, 437)
