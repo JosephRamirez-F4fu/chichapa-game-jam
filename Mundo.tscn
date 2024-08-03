@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cvn2ohnvye0o7"]
+[gd_scene load_steps=18 format=3 uid="uid://cvn2ohnvye0o7"]
 
 [ext_resource type="Texture2D" uid="uid://ccuufefet5qs8" path="res://assets/fondo/back_ground.png" id="1_7dy7w"]
 [ext_resource type="Texture2D" uid="uid://cy0ktdco60x6v" path="res://assets/columnas/columnas/bridge_1.png" id="2_7awwu"]
@@ -7,9 +7,28 @@
 [ext_resource type="Texture2D" uid="uid://bwhoyt3s7s5u8" path="res://assets/roquitas/roquitas/back_rock_1.png" id="4_5sase"]
 [ext_resource type="Texture2D" uid="uid://ba4y7odrhwlrh" path="res://assets/roquitas/roquitas/back_rock_9.png" id="4_8kjj7"]
 [ext_resource type="Texture2D" uid="uid://qxr2s655d60y" path="res://assets/columnas/columnas/bridge_4.png" id="4_qhd0t"]
-[ext_resource type="PackedScene" uid="uid://cbd8kkbd3dtae" path="res://components/piso_1.tscn" id="5_mhvci"]
-[ext_resource type="PackedScene" uid="uid://xcqf0opb43w1" path="res://components/piso_3.tscn" id="6_bpb77"]
-[ext_resource type="PackedScene" uid="uid://bdnsjita83s7q" path="res://components/piso_2.tscn" id="7_y1v0a"]
+[ext_resource type="Texture2D" uid="uid://wnx88yckglh3" path="res://assets/columnas/columnas/bridge_9.png" id="7_vfgsn"]
+[ext_resource type="Texture2D" uid="uid://76ht3efpmjaa" path="res://assets/piso/piso/piso_1.png" id="9_1qk32"]
+[ext_resource type="Texture2D" uid="uid://dcyoo4wanlhvo" path="res://assets/piso/piso/piso_2.png" id="10_v77om"]
+[ext_resource type="Texture2D" uid="uid://bsj34i33cugdn" path="res://assets/piso/piso/piso_3.png" id="11_4ok53"]
+[ext_resource type="Texture2D" uid="uid://cnmds7pmfnnf5" path="res://assets/columnas/columnas/bridge_5.png" id="11_bw54h"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_dh2cc"]
+a = Vector2(787, 71)
+b = Vector2(-273.5, 69.5)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_nbtf6"]
+a = Vector2(-6.00006, 3.5)
+b = Vector2(39.4999, -15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rsj6u"]
+size = Vector2(1195, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tsbvb"]
+size = Vector2(1072.5, 57)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0752v"]
+size = Vector2(1293.5, 11.25)
 
 [node name="Mundo" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [731.0]
@@ -21,6 +40,7 @@ motion_mirroring = Vector2(10, 10)
 
 [node name="fondo" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_repeat = 2
+position = Vector2(2, 2)
 scale = Vector2(0.240367, 0.243243)
 texture = ExtResource("1_7dy7w")
 centered = false
@@ -38,7 +58,7 @@ scale = Vector2(0.24, 0.24)
 texture = ExtResource("2_7awwu")
 
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.6, 0)
+motion_scale = Vector2(1.2, 0)
 
 [node name="torres" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
 position = Vector2(3840.78, 109.64)
@@ -69,43 +89,99 @@ rotation = -0.25784
 scale = Vector2(0.24, 0.281)
 texture = ExtResource("4_qhd0t")
 
-[node name="StaticBody2D" parent="." instance=ExtResource("5_mhvci")]
-position = Vector2(-188, 651)
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(86, 412)
+scale = Vector2(2, 2)
 
-[node name="StaticBody2D3" parent="." instance=ExtResource("6_bpb77")]
-position = Vector2(588, 688)
-scale = Vector2(0.24, 0.24)
+[node name="Piso1" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-20.5, 125.5)
+scale = Vector2(0.116502, 0.118395)
+texture = ExtResource("9_1qk32")
 
-[node name="StaticBody2D4" parent="." instance=ExtResource("7_y1v0a")]
-position = Vector2(882, 667)
-scale = Vector2(0.24, 0.24)
+[node name="Piso2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(490.5, 138.5)
+scale = Vector2(0.151818, 0.137431)
+texture = ExtResource("10_v77om")
 
-[node name="StaticBody2D2" parent="." instance=ExtResource("7_y1v0a")]
-position = Vector2(342, 666)
+[node name="Piso3" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(1161.5, 122)
+scale = Vector2(0.325279, 0.156838)
+texture = ExtResource("11_4ok53")
 
-[node name="StaticBody2D5" parent="." instance=ExtResource("5_mhvci")]
-position = Vector2(1336, 666)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(10.5, 51)
+scale = Vector2(1, 1)
+shape = SubResource("SegmentShape2D_dh2cc")
 
-[node name="StaticBody2D6" parent="." instance=ExtResource("7_y1v0a")]
-position = Vector2(1831.24, 688)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(795.5, 123)
+shape = SubResource("SegmentShape2D_nbtf6")
 
-[node name="StaticBody2D7" parent="." instance=ExtResource("5_mhvci")]
-position = Vector2(2287.24, 690)
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1133.25, 111.5)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_rsj6u")
 
-[node name="StaticBody2D8" parent="." instance=ExtResource("7_y1v0a")]
-position = Vector2(2786, 695)
+[node name="Bridge9" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(2853.5, 106.5)
+scale = Vector2(0.105513, 0.0780478)
+texture = ExtResource("7_vfgsn")
 
-[node name="StaticBody2D9" parent="." instance=ExtResource("5_mhvci")]
-position = Vector2(3239, 691)
+[node name="Bridge10" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(3077, 107)
+scale = Vector2(0.105513, 0.0780478)
+texture = ExtResource("7_vfgsn")
 
-[node name="StaticBody2D10" parent="." instance=ExtResource("7_y1v0a")]
-position = Vector2(3734, 695)
+[node name="Piso4" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(2050, 122.5)
+scale = Vector2(0.303858, 0.218232)
+texture = ExtResource("10_v77om")
 
-[node name="Jugador" parent="StaticBody2D10" instance=ExtResource("2_ny15v")]
-position = Vector2(-15200, -1179.17)
-scale = Vector2(8.33333, 8.33333)
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2968.5, 83.75)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_tsbvb")
+debug_color = Color(0.792157, 0.368627, 0.568627, 0.419608)
 
-[node name="Camera2D" type="Camera2D" parent="StaticBody2D10/Jugador"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2059.25, 105)
+shape = SubResource("RectangleShape2D_0752v")
+debug_color = Color(0.654902, 0.203922, 0.352941, 0.419608)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StaticBody2D"]
+
+[node name="Bridge5" type="Sprite2D" parent="StaticBody2D/StaticBody2D"]
+position = Vector2(2818.28, 35.375)
+scale = Vector2(0.08573, 0.0610503)
+texture = ExtResource("11_bw54h")
+
+[node name="Bridge7" type="Sprite2D" parent="StaticBody2D/StaticBody2D"]
+position = Vector2(2950.28, 34.875)
+scale = Vector2(0.08573, 0.0610503)
+texture = ExtResource("11_bw54h")
+
+[node name="Bridge6" type="Sprite2D" parent="StaticBody2D/StaticBody2D"]
+position = Vector2(2885.28, 34.875)
+scale = Vector2(0.08573, 0.0610503)
+texture = ExtResource("11_bw54h")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+offset_left = 9.0
+offset_top = 10.0
+offset_right = 398.0
+offset_bottom = 37.0
+theme_override_colors/font_shadow_color = Color(0.152941, 0.513726, 0.270588, 1)
+theme_override_colors/font_outline_color = Color(0, 0.913725, 0, 1)
+value = 50.0
+show_percentage = false
+
+[node name="Jugador" parent="." instance=ExtResource("2_ny15v")]
+position = Vector2(-91, 501)
+scale = Vector2(1.5, 1.5)
+
+[node name="Camera2D" type="Camera2D" parent="Jugador"]
 limit_bottom = 700
 position_smoothing_enabled = true
-position_smoothing_speed = 8.0
+position_smoothing_speed = 1.0

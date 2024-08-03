@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scripts/Jugador.gd" id="1_s4f3g"]
 [ext_resource type="Texture2D" uid="uid://c6a8y47vspsdb" path="res://assets/jugador/flechero.jpg" id="2_s2stu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3hxul"]
-size = Vector2(40, 40)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lp66w"]
+size = Vector2(38.3333, 39.3333)
 
 [node name="Jugador" type="CharacterBody2D"]
 script = ExtResource("1_s4f3g")
@@ -16,5 +16,6 @@ scale = Vector2(0.16, 0.16)
 texture = ExtResource("2_s2stu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 1.5)
 scale = Vector2(0.6, 1.5)
-shape = SubResource("RectangleShape2D_3hxul")
+shape = SubResource("RectangleShape2D_lp66w")
