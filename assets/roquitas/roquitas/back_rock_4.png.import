@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjomy251fshno"
-path="res://.godot/imported/tanque.jpg-1831990f614d062978a02dbde7240219.ctex"
+uid="uid://dkjqrr0rkmnnb"
+path="res://.godot/imported/back_rock_4.png-8e115c56e94545c24071f2b6d331797a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/jugador/jugador/tanque.jpg"
-dest_files=["res://.godot/imported/tanque.jpg-1831990f614d062978a02dbde7240219.ctex"]
+source_file="res://assets/roquitas/roquitas/back_rock_4.png"
+dest_files=["res://.godot/imported/back_rock_4.png-8e115c56e94545c24071f2b6d331797a.ctex"]
 
 [params]
 

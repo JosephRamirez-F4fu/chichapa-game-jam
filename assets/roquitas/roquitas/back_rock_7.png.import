@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkjqrr0rkmnnb"
-path="res://.godot/imported/Mesa de trabajo 18 copia.png-a31b5d92a601d6c2ec0daf0feb8093a6.ctex"
+uid="uid://cpnhdhqgpc112"
+path="res://.godot/imported/back_rock_7.png-3f3d48c910c1c088ec38f01ce27560cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/roquitas/roquitas/Mesa de trabajo 18 copia.png"
-dest_files=["res://.godot/imported/Mesa de trabajo 18 copia.png-a31b5d92a601d6c2ec0daf0feb8093a6.ctex"]
+source_file="res://assets/roquitas/roquitas/back_rock_7.png"
+dest_files=["res://.godot/imported/back_rock_7.png-3f3d48c910c1c088ec38f01ce27560cb.ctex"]
 
 [params]
 

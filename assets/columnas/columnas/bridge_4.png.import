@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccuufefet5qs8"
-path="res://.godot/imported/Mesa de trabajo 8.png-7b5c58e0f7abc35899f1e3c0bcbc2c03.ctex"
+uid="uid://qxr2s655d60y"
+path="res://.godot/imported/bridge_4.png-ee05cf5bdb85815c792e0a0b9a663917.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/fondo/fondo/Mesa de trabajo 8.png"
-dest_files=["res://.godot/imported/Mesa de trabajo 8.png-7b5c58e0f7abc35899f1e3c0bcbc2c03.ctex"]
+source_file="res://assets/columnas/columnas/bridge_4.png"
+dest_files=["res://.godot/imported/bridge_4.png-ee05cf5bdb85815c792e0a0b9a663917.ctex"]
 
 [params]
 

@@ -10,7 +10,8 @@ position = Vector2(0.24, 0)
 scale = Vector2(0.24, 0.24)
 
 [node name="Roca2" type="Sprite2D" parent="."]
-scale = Vector2(0.24, 0.24)
+position = Vector2(0, 16.9767)
+scale = Vector2(0.24, 0.286897)
 texture = ExtResource("1_w403k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

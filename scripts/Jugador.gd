@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 const GRAVEDAD := 10.0
-const ACELERACION := 150.0
-const SALTAR := 300.0
+const ACELERACION := 200.0
+const SALTAR := 400.0
 
 var direccion := 0.0
 

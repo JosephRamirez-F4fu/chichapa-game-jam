@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbyomr45e6wg6"
-path="res://.godot/imported/mago.jpg-41c2f0a61a3c170999b9432904182ffd.ctex"
+uid="uid://wnx88yckglh3"
+path="res://.godot/imported/bridge_9.png-6d8561a1692a27f0b516299ffb6aa872.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/jugador/jugador/mago.jpg"
-dest_files=["res://.godot/imported/mago.jpg-41c2f0a61a3c170999b9432904182ffd.ctex"]
+source_file="res://assets/columnas/columnas/bridge_9.png"
+dest_files=["res://.godot/imported/bridge_9.png-6d8561a1692a27f0b516299ffb6aa872.ctex"]
 
 [params]
 

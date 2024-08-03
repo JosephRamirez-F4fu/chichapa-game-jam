@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy0ktdco60x6v"
-path="res://.godot/imported/Mesa de trabajo 9.png-6ca5a24699a8596990215fd3469a1a69.ctex"
+uid="uid://ulmc3u7ck06j"
+path="res://.godot/imported/marmol_1.png-ca271337702ad92c50a4f73e3626e05d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/columnas/columnas/Mesa de trabajo 9.png"
-dest_files=["res://.godot/imported/Mesa de trabajo 9.png-6ca5a24699a8596990215fd3469a1a69.ctex"]
+source_file="res://assets/columnas/columnas/marmol_1.png"
+dest_files=["res://.godot/imported/marmol_1.png-ca271337702ad92c50a4f73e3626e05d.ctex"]
 
 [params]
 

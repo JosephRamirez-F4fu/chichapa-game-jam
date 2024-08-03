@@ -1,23 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvn2ohnvye0o7"]
+[gd_scene load_steps=11 format=3 uid="uid://cvn2ohnvye0o7"]
 
-[ext_resource type="Texture2D" uid="uid://cy0ktdco60x6v" path="res://assets/columnas/columnas/Mesa de trabajo 9.png" id="2_ljtip"]
+[ext_resource type="Texture2D" uid="uid://ccuufefet5qs8" path="res://assets/fondo/back_ground.png" id="1_7dy7w"]
+[ext_resource type="Texture2D" uid="uid://cy0ktdco60x6v" path="res://assets/columnas/columnas/bridge_1.png" id="2_7awwu"]
 [ext_resource type="PackedScene" uid="uid://ca83gaaglxobt" path="res://Jugador.tscn" id="2_ny15v"]
-[ext_resource type="Texture2D" uid="uid://ccuufefet5qs8" path="res://assets/fondo/fondo/Mesa de trabajo 8.png" id="2_oto11"]
-[ext_resource type="Texture2D" uid="uid://buiofukqwdnni" path="res://assets/columnas/columnas/Mesa de trabajo 11 copia 2.png" id="3_myj7m"]
-[ext_resource type="PackedScene" uid="uid://dkp0lycxafm2r" path="res://components/roca_1.tscn" id="5_ovv05"]
+[ext_resource type="Texture2D" uid="uid://buiofukqwdnni" path="res://assets/columnas/columnas/bridge_2.png" id="3_lmc2q"]
+[ext_resource type="Texture2D" uid="uid://bwhoyt3s7s5u8" path="res://assets/roquitas/roquitas/back_rock_1.png" id="4_5sase"]
+[ext_resource type="Texture2D" uid="uid://ba4y7odrhwlrh" path="res://assets/roquitas/roquitas/back_rock_9.png" id="4_8kjj7"]
+[ext_resource type="Texture2D" uid="uid://qxr2s655d60y" path="res://assets/columnas/columnas/bridge_4.png" id="4_qhd0t"]
+[ext_resource type="PackedScene" uid="uid://cbd8kkbd3dtae" path="res://components/piso_1.tscn" id="5_mhvci"]
+[ext_resource type="PackedScene" uid="uid://xcqf0opb43w1" path="res://components/piso_3.tscn" id="6_bpb77"]
+[ext_resource type="PackedScene" uid="uid://bdnsjita83s7q" path="res://components/piso_2.tscn" id="7_y1v0a"]
 
 [node name="Mundo" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [731.0]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2(1, 1)
+motion_mirroring = Vector2(10, 10)
 
 [node name="fondo" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_repeat = 2
-position = Vector2(2, -6)
 scale = Vector2(0.240367, 0.243243)
-texture = ExtResource("2_oto11")
+texture = ExtResource("1_7dy7w")
 centered = false
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -25,29 +30,82 @@ centered = false
 [node name="humo" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.4, 0.4)
+motion_scale = Vector2(0.6, 0)
 
 [node name="torres" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2(662, 369)
+position = Vector2(665, 424)
 scale = Vector2(0.24, 0.24)
-texture = ExtResource("2_ljtip")
+texture = ExtResource("2_7awwu")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.6, 0)
+
+[node name="torres" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
+position = Vector2(3840.78, 109.64)
+scale = Vector2(0.539716, 0.596619)
+texture = ExtResource("2_7awwu")
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.4, 0.4)
 
 [node name="torres" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
-position = Vector2(1869, 437)
+position = Vector2(2362, 317)
+scale = Vector2(0.529493, 0.507887)
+texture = ExtResource("3_lmc2q")
+
+[node name="BackRock1" type="Sprite2D" parent="."]
+position = Vector2(1544, 596)
+scale = Vector2(0.174333, 0.301242)
+texture = ExtResource("4_5sase")
+
+[node name="BackRock9" type="Sprite2D" parent="."]
+position = Vector2(1652, 643)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_8kjj7")
+flip_h = true
+
+[node name="Bridge4" type="Sprite2D" parent="."]
+position = Vector2(1339, 605)
+rotation = -0.25784
+scale = Vector2(0.24, 0.281)
+texture = ExtResource("4_qhd0t")
+
+[node name="StaticBody2D" parent="." instance=ExtResource("5_mhvci")]
+position = Vector2(-188, 651)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("6_bpb77")]
+position = Vector2(588, 688)
 scale = Vector2(0.24, 0.24)
-texture = ExtResource("3_myj7m")
 
-[node name="ground" parent="." instance=ExtResource("5_ovv05")]
-position = Vector2(153, 621)
+[node name="StaticBody2D4" parent="." instance=ExtResource("7_y1v0a")]
+position = Vector2(882, 667)
+scale = Vector2(0.24, 0.24)
 
-[node name="Jugador" parent="." instance=ExtResource("2_ny15v")]
-position = Vector2(86, 412)
-scale = Vector2(2, 2)
+[node name="StaticBody2D2" parent="." instance=ExtResource("7_y1v0a")]
+position = Vector2(342, 666)
 
-[node name="Camera2D" type="Camera2D" parent="Jugador"]
+[node name="StaticBody2D5" parent="." instance=ExtResource("5_mhvci")]
+position = Vector2(1336, 666)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("7_y1v0a")]
+position = Vector2(1831.24, 688)
+
+[node name="StaticBody2D7" parent="." instance=ExtResource("5_mhvci")]
+position = Vector2(2287.24, 690)
+
+[node name="StaticBody2D8" parent="." instance=ExtResource("7_y1v0a")]
+position = Vector2(2786, 695)
+
+[node name="StaticBody2D9" parent="." instance=ExtResource("5_mhvci")]
+position = Vector2(3239, 691)
+
+[node name="StaticBody2D10" parent="." instance=ExtResource("7_y1v0a")]
+position = Vector2(3734, 695)
+
+[node name="Jugador" parent="StaticBody2D10" instance=ExtResource("2_ny15v")]
+position = Vector2(-15200, -1179.17)
+scale = Vector2(8.33333, 8.33333)
+
+[node name="Camera2D" type="Camera2D" parent="StaticBody2D10/Jugador"]
 limit_bottom = 700
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0

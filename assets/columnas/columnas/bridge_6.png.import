@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0rwov16pvnhc"
-path="res://.godot/imported/Mesa de trabajo 17.png-bced22ec8bdc07a9b8143e57a29169a3.ctex"
+uid="uid://wvrv7cjhtwcu"
+path="res://.godot/imported/bridge_6.png-374090dcf83a041a067381d4c739168e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/roquitas/roquitas/Mesa de trabajo 17.png"
-dest_files=["res://.godot/imported/Mesa de trabajo 17.png-bced22ec8bdc07a9b8143e57a29169a3.ctex"]
+source_file="res://assets/columnas/columnas/bridge_6.png"
+dest_files=["res://.godot/imported/bridge_6.png-374090dcf83a041a067381d4c739168e.ctex"]
 
 [params]
 
