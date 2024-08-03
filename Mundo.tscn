@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cvn2ohnvye0o7"]
 
 [ext_resource type="PackedScene" uid="uid://ca83gaaglxobt" path="res://Jugador.tscn" id="2_ny15v"]
-[ext_resource type="PackedScene" uid="uid://vh08w3iktclu" path="res://enemigo_tipo_1.tscn" id="2_peyeo"]
+[ext_resource type="PackedScene" path="res://enemigo_tipo_1.tscn" id="2_peyeo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hyrt1"]
 size = Vector2(108.444, 73.373)
