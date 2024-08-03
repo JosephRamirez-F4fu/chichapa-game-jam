@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [gd_scene load_steps=8 format=3 uid="uid://cvn2ohnvye0o7"]
 
 [ext_resource type="Texture2D" uid="uid://cskbjs6j4mk2j" path="res://assets/world/fondo boceto.png" id="1_1umcl"]
@@ -44,3 +45,44 @@ position = Vector2(7625, 557)
 
 [node name="StaticBody2D9" parent="." instance=ExtResource("7_gcm4b")]
 position = Vector2(8381, 486)
+=======
+[gd_scene load_steps=4 format=3 uid="uid://cvn2ohnvye0o7"]
+
+[ext_resource type="PackedScene" uid="uid://ca83gaaglxobt" path="res://Jugador.tscn" id="2_ny15v"]
+[ext_resource type="Texture2D" uid="uid://1nyjdyu4lnt5" path="res://assets/images/humo boceto.png" id="2_r88ep"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hyrt1"]
+size = Vector2(108.444, 73.373)
+
+[node name="Mundo" type="Node2D"]
+
+[node name="Jugador" parent="." instance=ExtResource("2_ny15v")]
+position = Vector2(402, 291)
+
+[node name="Camera2D" type="Camera2D" parent="Jugador"]
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(486, 536)
+rotation = -3.14159
+scale = Vector2(9.1845, 0.402143)
+shape = SubResource("RectangleShape2D_hyrt1")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+visible = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="fondo" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(-54, 0)
+texture = ExtResource("2_r88ep")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="humo" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource("2_r88ep")
+>>>>>>> main
