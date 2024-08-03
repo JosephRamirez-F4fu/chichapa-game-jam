@@ -1,9 +1,46 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvn2ohnvye0o7"]
+[gd_scene load_steps=8 format=3 uid="uid://cvn2ohnvye0o7"]
 
+[ext_resource type="Texture2D" uid="uid://cskbjs6j4mk2j" path="res://assets/world/fondo boceto.png" id="1_1umcl"]
 [ext_resource type="Texture2D" uid="uid://b670gvhj6p6xy" path="res://assets/fondo.jpg" id="1_rvfgn"]
+[ext_resource type="PackedScene" uid="uid://b5j8h1f1pgr37" path="res://platforms/long_risck_1.tscn" id="3_cw8dv"]
+[ext_resource type="PackedScene" uid="uid://bt3n0ytmx1xeg" path="res://platforms/risck.tscn" id="4_04q1q"]
+[ext_resource type="PackedScene" uid="uid://c7t57ki58a68p" path="res://platforms/long_risck_2.tscn" id="5_j0dli"]
+[ext_resource type="PackedScene" uid="uid://c5xbyttuq1wan" path="res://platforms/ground.tscn" id="6_puov7"]
+[ext_resource type="PackedScene" uid="uid://bk6gb0s6sfkmh" path="res://platforms/meceta.tscn" id="7_gcm4b"]
 
 [node name="Mundo" type="Node2D"]
 
+[node name="FondoBoceto" type="Sprite2D" parent="."]
+position = Vector2(13190, -6)
+texture = ExtResource("1_1umcl")
+
 [node name="fondo" type="Sprite2D" parent="."]
-position = Vector2(50, 0)
+position = Vector2(8013, -156)
 texture = ExtResource("1_rvfgn")
+
+[node name="StaticBody2D" parent="." instance=ExtResource("3_cw8dv")]
+position = Vector2(782, 151)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("4_04q1q")]
+position = Vector2(172, 23)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("5_j0dli")]
+position = Vector2(1678, 387)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("6_puov7")]
+position = Vector2(3103, 556)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("6_puov7")]
+position = Vector2(4238, 555)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("6_puov7")]
+position = Vector2(5374, 548)
+
+[node name="StaticBody2D7" parent="." instance=ExtResource("6_puov7")]
+position = Vector2(6496, 556)
+
+[node name="StaticBody2D8" parent="." instance=ExtResource("6_puov7")]
+position = Vector2(7625, 557)
+
+[node name="StaticBody2D9" parent="." instance=ExtResource("7_gcm4b")]
+position = Vector2(8381, 486)

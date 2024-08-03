@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c7t57ki58a68p"]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(2.34361, 2.66998)
+polygon = PackedVector2Array(21.9841, 3.39411, 311, -1, 241, 88, 248.558, 120.998, 263.492, 176.055, 226.796, 230.737, 254.958, 328.116, 253.678, 422.873, 261.562, 555.809, 68.2708, 564.049, 78.3075, 343.846, 56.1195, 202.272, 21.1308, 143.47, 56.1195, 73.4321)
