@@ -880,5 +880,14 @@ position = Vector2(77479, -2198)
 [node name="enemigo tipo 19" parent="." instance=ExtResource("35_er0oj")]
 position = Vector2(3695, -72)
 
+[node name="enemigo tipo 21" parent="." instance=ExtResource("35_er0oj")]
+position = Vector2(13655, -1557)
+
+[node name="enemigo tipo 22" parent="." instance=ExtResource("35_er0oj")]
+position = Vector2(17908, -1395)
+
+[node name="enemigo tipo 23" parent="." instance=ExtResource("35_er0oj")]
+position = Vector2(23140, -1357)
+
 [node name="enemigo tipo 20" parent="." instance=ExtResource("35_er0oj")]
 position = Vector2(9383, -104)

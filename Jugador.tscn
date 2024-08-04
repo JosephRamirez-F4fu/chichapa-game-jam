@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://ca83gaaglxobt"]
+[gd_scene load_steps=36 format=3 uid="uid://ca83gaaglxobt"]
 
 [ext_resource type="Script" path="res://scripts/Jugador.gd" id="1_s4f3g"]
 [ext_resource type="Texture2D" uid="uid://d0a2j87vymxbl" path="res://assets/jugador/tanque/tanque.png" id="2_lcmus"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://b807pldvmkhol" path="res://assets/sounds/Ataque Diabolico.ogg" id="8_g75g6"]
 [ext_resource type="AudioStream" uid="uid://bkdsxwumio5y4" path="res://assets/sounds/Ataque del personaje.ogg" id="9_6fpam"]
 [ext_resource type="AudioStream" uid="uid://c1e1mhlnyoebu" path="res://assets/sounds/A6 Musica de Derrota.ogg" id="10_serwi"]
+[ext_resource type="AudioStream" uid="uid://6b5skodlbdqn" path="res://assets/sounds/A5 Musica de Victoria.ogg" id="12_47iom"]
 
 [sub_resource type="Animation" id="Animation_igq2m"]
 length = 0.001
@@ -95,6 +96,22 @@ tracks/0/keys = {
 "values": [3, 5, 6, 3]
 }
 
+[sub_resource type="Animation" id="Animation_ddt3o"]
+resource_name = "flechero_muerte"
+length = 25.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+
 [sub_resource type="Animation" id="Animation_yyhhf"]
 resource_name = "flechero_walk"
 length = 2.0
@@ -125,6 +142,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [6, 4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_d5ptu"]
+resource_name = "mago_muerte"
+length = 25.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
 }
 
 [sub_resource type="Animation" id="Animation_8m2i5"]
@@ -159,54 +192,6 @@ tracks/0/keys = {
 "values": [3, 4, 5, 6, 3]
 }
 
-[sub_resource type="Animation" id="Animation_wi6ne"]
-resource_name = "tanque_walk"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-
-[sub_resource type="Animation" id="Animation_ddt3o"]
-resource_name = "flechero_muerte"
-length = 25.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [8]
-}
-
-[sub_resource type="Animation" id="Animation_d5ptu"]
-resource_name = "mago_muerte"
-length = 25.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [7]
-}
-
 [sub_resource type="Animation" id="Animation_4w15n"]
 resource_name = "tanque_muerte"
 length = 25.0
@@ -221,6 +206,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [7]
+}
+
+[sub_resource type="Animation" id="Animation_wi6ne"]
+resource_name = "tanque_walk"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ed8yp"]
@@ -463,13 +464,12 @@ shape = SubResource("RectangleShape2D_3hxul")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 9.5)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_xpgdi")
 
 [node name="cooldown" type="Timer" parent="."]
 
 [node name="cooldown_cambio_personaje" type="Timer" parent="."]
-wait_time = 4.0
+wait_time = 2.0
 
 [node name="transformacion" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -533,6 +533,9 @@ stream = ExtResource("9_6fpam")
 
 [node name="derrota" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_serwi")
+
+[node name="win" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_47iom")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]

@@ -29,6 +29,11 @@ func _on_jugador_muerte():
 
 
 func _on_fall_body_entered(body):
-	print("a")
 	if body.is_in_group("Jugador"):
 		body.die()
+
+
+func _on_win_body_entered(body):
+	if body.is_in_group("Jugador"):
+		$fondo.stop()
+		body.win()

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -500.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -221,3 +221,7 @@ func _restart_scene() -> void:
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("enemigo") and $escudo/TiempoEscudo.is_stopped():
 		take_damage(21)
+
+func win():
+	$win.play()
+	set_physics_process(false)
