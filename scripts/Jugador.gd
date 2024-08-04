@@ -122,6 +122,7 @@ func actualizar_modo():
 	sprite.texture = modo_actual["sprite"]
 	_on_tiempo_escudo_timeout()
 	_on_tiempo_aura_timeout()
+	$CambioPersonaje.play()
 
 func _input(event):
 	if event is InputEventKey and event.pressed:
@@ -156,6 +157,7 @@ func habilidad_mago():
 		$aura/TiempoAura.start()
 		$aura.visible = true
 		$aura/AnimationAura.play("aura")
+		$aura/AudioStreamPlayer.play()
 
 func habilidad_flechero():
 	var new_flecha = flecha.instantiate()
@@ -165,6 +167,7 @@ func habilidad_flechero():
 		new_flecha.direccion = 1
 	new_flecha.position = Vector2(position.x, position.y)
 	get_tree().current_scene.add_child(new_flecha)
+	$ataque_flecha.play()
 
 func _on_cooldown_timeout():
 	cooldown.stop()
@@ -181,3 +184,4 @@ func _on_tiempo_escudo_timeout():
 func _on_tiempo_aura_timeout():
 	$aura/TiempoAura.stop()
 	$aura.visible = false
+	$aura/AudioStreamPlayer.stop()

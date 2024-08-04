@@ -1,10 +1,13 @@
-[gd_scene load_steps=25 format=3 uid="uid://ca83gaaglxobt"]
+[gd_scene load_steps=28 format=3 uid="uid://ca83gaaglxobt"]
 
 [ext_resource type="Script" path="res://scripts/Jugador.gd" id="1_s4f3g"]
 [ext_resource type="Texture2D" uid="uid://boclg27x4aih5" path="res://assets/Transformacion.png" id="2_lgj08"]
 [ext_resource type="Texture2D" uid="uid://bhhdj6430ek7w" path="res://assets/jugador/tanque/escudo.png" id="3_r44rj"]
 [ext_resource type="Texture2D" uid="uid://4j4rda4yi3qu" path="res://assets/jugador/curador/aura.png" id="4_ml8f2"]
 [ext_resource type="Texture2D" uid="uid://ccr7ddu072q11" path="res://assets/jugador/curador/salud 1.png" id="5_1a0qx"]
+[ext_resource type="AudioStream" uid="uid://xiwn7pd54psj" path="res://assets/sounds/Curacion.ogg" id="6_hgd5x"]
+[ext_resource type="AudioStream" uid="uid://cbssf0qj1ng6k" path="res://assets/sounds/A1 Boton-de-menu-y-cambio-de-personaje.ogg" id="7_xs1x8"]
+[ext_resource type="AudioStream" uid="uid://b807pldvmkhol" path="res://assets/sounds/Ataque Diabolico.ogg" id="8_g75g6"]
 
 [sub_resource type="Animation" id="Animation_igq2m"]
 length = 0.001
@@ -432,6 +435,7 @@ libraries = {
 wait_time = 7.0
 
 [node name="aura" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(0, 30)
 scale = Vector2(0.24, 0.24)
 texture = ExtResource("4_ml8f2")
@@ -448,6 +452,19 @@ wait_time = 10.0
 [node name="Sprite2D" type="Sprite2D" parent="aura"]
 position = Vector2(-95.8333, -79.1666)
 texture = ExtResource("5_1a0qx")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="aura"]
+stream = ExtResource("6_hgd5x")
+bus = &"fx"
+
+[node name="CambioPersonaje" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_xs1x8")
+bus = &"fx"
+
+[node name="ataque_flecha" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_g75g6")
+volume_db = -5.0
+bus = &"fx"
 
 [connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]
 [connection signal="timeout" from="cooldown_cambio_personaje" to="." method="_on_cooldown_cambio_personaje_timeout"]
