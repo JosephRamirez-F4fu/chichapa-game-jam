@@ -18,6 +18,8 @@ enum Modo {
 @onready var collision = $CollisionShape2D
 @onready var cooldown = $cooldown
 @onready var cooldown_cambio_personaje = $cooldown_cambio_personaje
+@onready var change = $transformacion
+
 var flecha = preload("res://proyectil.tscn")
 
 var current_mode := Modo.FLECHERO
@@ -98,6 +100,7 @@ func cambiar_modo(op):
 	if cooldown_cambio_personaje.is_stopped():
 		cooldown_cambio_personaje.start()
 		current_mode = op
+		$transformacion/AnimationPlayer.play("change")
 		match op:
 			0:
 				collision.scale.y = 1.5
@@ -117,6 +120,9 @@ func cambiar_modo(op):
 func actualizar_modo():
 	var modo_actual = modos[current_mode]
 	sprite.texture = modo_actual["sprite"]
+	_on_tiempo_escudo_timeout()
+	_on_tiempo_aura_timeout()
+	$CambioPersonaje.play()
 
 func _input(event):
 	if event is InputEventKey and event.pressed:
@@ -131,20 +137,27 @@ func usar_habilidad():
 	var modo_actual = modos[current_mode]
 	if cooldown.is_stopped():
 		cooldown.start()
-		play_habilidad_animation()
 		match current_mode:
 			Modo.TANQUE:
 				habilidad_tanque()
 			Modo.MAGO:
 				habilidad_mago()
 			Modo.FLECHERO:
+				play_habilidad_animation()
 				habilidad_flechero()
 
 func habilidad_tanque():
-	pass
+	if $escudo/TiempoEscudo.is_stopped():
+		$escudo/TiempoEscudo.start()
+		$escudo.visible = true
+		$escudo/AnimationEscudo.play("proteger")
 
 func habilidad_mago():
-	pass
+	if $aura/TiempoAura.is_stopped():
+		$aura/TiempoAura.start()
+		$aura.visible = true
+		$aura/AnimationAura.play("aura")
+		$aura/AudioStreamPlayer.play()
 
 func habilidad_flechero():
 	var new_flecha = flecha.instantiate()
@@ -154,6 +167,7 @@ func habilidad_flechero():
 		new_flecha.direccion = 1
 	new_flecha.position = Vector2(position.x, position.y)
 	get_tree().current_scene.add_child(new_flecha)
+	$ataque_flecha.play()
 
 func _on_cooldown_timeout():
 	cooldown.stop()
@@ -161,3 +175,13 @@ func _on_cooldown_timeout():
 
 func _on_cooldown_cambio_personaje_timeout():
 	cooldown_cambio_personaje.stop() # Replace with function body.
+
+func _on_tiempo_escudo_timeout():
+	$escudo/TiempoEscudo.stop()# Replace with function body.
+	$escudo/AnimationEscudo.play_backwards("proteger")
+	$escudo.visible = false
+
+func _on_tiempo_aura_timeout():
+	$aura/TiempoAura.stop()
+	$aura.visible = false
+	$aura/AudioStreamPlayer.stop()
