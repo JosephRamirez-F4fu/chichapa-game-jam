@@ -275,19 +275,11 @@ _data = {
 "rotar": SubResource("Animation_cll04")
 }
 
-<<<<<<< HEAD
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o0wbc"]
 size = Vector2(189, 114)
 
 [node name="enemigo tipo 2" type="CharacterBody2D" groups=["enemigo"]]
-
-=======
-[sub_resource type="CircleShape2D" id="CircleShape2D_qqc2e"]
-radius = 15.2971
-
-[node name="enemigo tipo 2" type="CharacterBody2D" groups=["enemigo"]]
->>>>>>> origin/main_enemigo
 script = ExtResource("1_5iff6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
