@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dkp0lycxafm2r"]
 
-[ext_resource type="Texture2D" uid="uid://b6h34fhff5qlc" path="res://assets/mundo/roca 2.png" id="1_f8be1"]
+[ext_resource type="Texture2D" uid="uid://b6h34fhff5qlc" path="res://assets/mundo/rocas/roca 2.png" id="1_f8be1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b5s2q"]
 size = Vector2(2635.42, 141.667)

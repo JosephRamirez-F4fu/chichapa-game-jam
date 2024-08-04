@@ -1,34 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://cvn2ohnvye0o7"]
+[gd_scene load_steps=6 format=3 uid="uid://cvn2ohnvye0o7"]
 
 [ext_resource type="Texture2D" uid="uid://ccuufefet5qs8" path="res://assets/fondo/back_ground.png" id="1_7dy7w"]
-[ext_resource type="Texture2D" uid="uid://cy0ktdco60x6v" path="res://assets/columnas/columnas/bridge_1.png" id="2_7awwu"]
 [ext_resource type="PackedScene" uid="uid://ca83gaaglxobt" path="res://Jugador.tscn" id="2_ny15v"]
-[ext_resource type="Texture2D" uid="uid://buiofukqwdnni" path="res://assets/columnas/columnas/bridge_2.png" id="3_lmc2q"]
-[ext_resource type="Texture2D" uid="uid://bwhoyt3s7s5u8" path="res://assets/roquitas/roquitas/back_rock_1.png" id="4_5sase"]
-[ext_resource type="Texture2D" uid="uid://ba4y7odrhwlrh" path="res://assets/roquitas/roquitas/back_rock_9.png" id="4_8kjj7"]
-[ext_resource type="Texture2D" uid="uid://qxr2s655d60y" path="res://assets/columnas/columnas/bridge_4.png" id="4_qhd0t"]
-[ext_resource type="Texture2D" uid="uid://wnx88yckglh3" path="res://assets/columnas/columnas/bridge_9.png" id="7_vfgsn"]
-[ext_resource type="Texture2D" uid="uid://76ht3efpmjaa" path="res://assets/piso/piso/piso_1.png" id="9_1qk32"]
-[ext_resource type="Texture2D" uid="uid://dcyoo4wanlhvo" path="res://assets/piso/piso/piso_2.png" id="10_v77om"]
-[ext_resource type="Texture2D" uid="uid://bsj34i33cugdn" path="res://assets/piso/piso/piso_3.png" id="11_4ok53"]
-[ext_resource type="Texture2D" uid="uid://cnmds7pmfnnf5" path="res://assets/columnas/columnas/bridge_5.png" id="11_bw54h"]
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_dh2cc"]
-a = Vector2(787, 71)
-b = Vector2(-273.5, 69.5)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_nbtf6"]
-a = Vector2(-6.00006, 3.5)
-b = Vector2(39.4999, -15)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rsj6u"]
-size = Vector2(1195, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tsbvb"]
-size = Vector2(1072.5, 57)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0752v"]
-size = Vector2(1293.5, 11.25)
+[ext_resource type="Texture2D" uid="uid://cy0ktdco60x6v" path="res://assets/columnas/bridge_1.png" id="2_uewxk"]
+[ext_resource type="Texture2D" uid="uid://buiofukqwdnni" path="res://assets/columnas/bridge_2.png" id="3_cy5pi"]
+[ext_resource type="PackedScene" uid="uid://b0n3fee2d1b0w" path="res://level.tscn" id="5_bt6o1"]
 
 [node name="Mundo" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [731.0]
@@ -55,7 +31,7 @@ motion_scale = Vector2(0.6, 0)
 [node name="torres" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
 position = Vector2(665, 424)
 scale = Vector2(0.24, 0.24)
-texture = ExtResource("2_7awwu")
+texture = ExtResource("2_uewxk")
 
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(1.2, 0)
@@ -63,106 +39,14 @@ motion_scale = Vector2(1.2, 0)
 [node name="torres" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
 position = Vector2(3840.78, 109.64)
 scale = Vector2(0.539716, 0.596619)
-texture = ExtResource("2_7awwu")
+texture = ExtResource("2_uewxk")
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="torres" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
 position = Vector2(2362, 317)
 scale = Vector2(0.529493, 0.507887)
-texture = ExtResource("3_lmc2q")
-
-[node name="BackRock1" type="Sprite2D" parent="."]
-position = Vector2(1544, 596)
-scale = Vector2(0.174333, 0.301242)
-texture = ExtResource("4_5sase")
-
-[node name="BackRock9" type="Sprite2D" parent="."]
-position = Vector2(1652, 643)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("4_8kjj7")
-flip_h = true
-
-[node name="Bridge4" type="Sprite2D" parent="."]
-position = Vector2(1339, 605)
-rotation = -0.25784
-scale = Vector2(0.24, 0.281)
-texture = ExtResource("4_qhd0t")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(86, 412)
-scale = Vector2(2, 2)
-
-[node name="Piso1" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(-20.5, 125.5)
-scale = Vector2(0.116502, 0.118395)
-texture = ExtResource("9_1qk32")
-
-[node name="Piso2" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(490.5, 138.5)
-scale = Vector2(0.151818, 0.137431)
-texture = ExtResource("10_v77om")
-
-[node name="Piso3" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(1161.5, 122)
-scale = Vector2(0.325279, 0.156838)
-texture = ExtResource("11_4ok53")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(10.5, 51)
-shape = SubResource("SegmentShape2D_dh2cc")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(795.5, 123)
-shape = SubResource("SegmentShape2D_nbtf6")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1133.25, 111.5)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_rsj6u")
-
-[node name="Bridge9" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(2853.5, 106.5)
-scale = Vector2(0.105513, 0.0780478)
-texture = ExtResource("7_vfgsn")
-
-[node name="Bridge10" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(3077, 107)
-scale = Vector2(0.105513, 0.0780478)
-texture = ExtResource("7_vfgsn")
-
-[node name="Piso4" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(2050, 122.5)
-scale = Vector2(0.303858, 0.218232)
-texture = ExtResource("10_v77om")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(2968.5, 83.75)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_tsbvb")
-debug_color = Color(0.792157, 0.368627, 0.568627, 0.419608)
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(2059.25, 105)
-shape = SubResource("RectangleShape2D_0752v")
-debug_color = Color(0.654902, 0.203922, 0.352941, 0.419608)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="StaticBody2D"]
-
-[node name="Bridge5" type="Sprite2D" parent="StaticBody2D/StaticBody2D"]
-position = Vector2(2818.28, 35.375)
-scale = Vector2(0.08573, 0.0610503)
-texture = ExtResource("11_bw54h")
-
-[node name="Bridge7" type="Sprite2D" parent="StaticBody2D/StaticBody2D"]
-position = Vector2(2950.28, 34.875)
-scale = Vector2(0.08573, 0.0610503)
-texture = ExtResource("11_bw54h")
-
-[node name="Bridge6" type="Sprite2D" parent="StaticBody2D/StaticBody2D"]
-position = Vector2(2885.28, 34.875)
-scale = Vector2(0.08573, 0.0610503)
-texture = ExtResource("11_bw54h")
+texture = ExtResource("3_cy5pi")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -184,3 +68,6 @@ scale = Vector2(1.5, 1.5)
 limit_bottom = 700
 position_smoothing_enabled = true
 position_smoothing_speed = 1.0
+
+[node name="StaticBody2D" parent="." instance=ExtResource("5_bt6o1")]
+position = Vector2(-483, 651)
