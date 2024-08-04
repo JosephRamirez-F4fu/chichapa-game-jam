@@ -120,6 +120,8 @@ func cambiar_modo(op):
 func actualizar_modo():
 	var modo_actual = modos[current_mode]
 	sprite.texture = modo_actual["sprite"]
+	_on_tiempo_escudo_timeout()
+	_on_tiempo_aura_timeout()
 
 func _input(event):
 	if event is InputEventKey and event.pressed:
@@ -134,20 +136,26 @@ func usar_habilidad():
 	var modo_actual = modos[current_mode]
 	if cooldown.is_stopped():
 		cooldown.start()
-		play_habilidad_animation()
 		match current_mode:
 			Modo.TANQUE:
 				habilidad_tanque()
 			Modo.MAGO:
 				habilidad_mago()
 			Modo.FLECHERO:
+				play_habilidad_animation()
 				habilidad_flechero()
 
 func habilidad_tanque():
-	pass
+	if $escudo/TiempoEscudo.is_stopped():
+		$escudo/TiempoEscudo.start()
+		$escudo.visible = true
+		$escudo/AnimationEscudo.play("proteger")
 
 func habilidad_mago():
-	pass
+	if $aura/TiempoAura.is_stopped():
+		$aura/TiempoAura.start()
+		$aura.visible = true
+		$aura/AnimationAura.play("aura")
 
 func habilidad_flechero():
 	var new_flecha = flecha.instantiate()
@@ -164,3 +172,12 @@ func _on_cooldown_timeout():
 
 func _on_cooldown_cambio_personaje_timeout():
 	cooldown_cambio_personaje.stop() # Replace with function body.
+
+func _on_tiempo_escudo_timeout():
+	$escudo/TiempoEscudo.stop()# Replace with function body.
+	$escudo/AnimationEscudo.play_backwards("proteger")
+	$escudo.visible = false
+
+func _on_tiempo_aura_timeout():
+	$aura/TiempoAura.stop()
+	$aura.visible = false
