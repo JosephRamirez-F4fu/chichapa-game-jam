@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 
+var vida = 3
 var speed = 80.0
 const SPEED_PERSEGUIR = 200
 const JUMP_VELOCITY = -400.0
@@ -37,6 +38,7 @@ func detect():
 			$Sprite2D.flip_h = true
 		else:
 			persiguir = false
+			$AnimationPlayer.play("move")
 	
 	if $left.is_colliding():
 		var obj = $left.get_collider()
@@ -47,8 +49,4 @@ func detect():
 			$Sprite2D.flip_h = false
 		else:
 			persiguir = false
-	
-	
-
-func _on_area_2d_body_entered(body):
-	pass # Replace with function body.
+			$AnimationPlayer.play("move")
