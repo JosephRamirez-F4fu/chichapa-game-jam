@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://ca83gaaglxobt"]
+[gd_scene load_steps=29 format=3 uid="uid://ca83gaaglxobt"]
 
 [ext_resource type="Script" path="res://scripts/Jugador.gd" id="1_s4f3g"]
 [ext_resource type="Texture2D" uid="uid://boclg27x4aih5" path="res://assets/Transformacion.png" id="2_lgj08"]
@@ -172,9 +172,6 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3]
 }
 
-[sub_resource type="Animation" id="Animation_1ilrl"]
-resource_name = "morir"
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ed8yp"]
 _data = {
 "RESET": SubResource("Animation_igq2m"),
@@ -183,16 +180,12 @@ _data = {
 "flechero_walk": SubResource("Animation_yyhhf"),
 "mago_jump": SubResource("Animation_sq56s"),
 "mago_walk": SubResource("Animation_8m2i5"),
-"morir": SubResource("Animation_1ilrl"),
 "tanque_jump": SubResource("Animation_mo4w3"),
 "tanque_walk": SubResource("Animation_wi6ne")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3hxul"]
 size = Vector2(40, 40)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xpgdi"]
-size = Vector2(29, 65)
 
 [sub_resource type="Animation" id="Animation_184p3"]
 resource_name = "change"
@@ -406,16 +399,14 @@ scale = Vector2(0.12, 0.12)
 offset = Vector2(0, -330)
 hframes = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 9.50001)
-scale = Vector2(0.6, 1.5)
-shape = SubResource("RectangleShape2D_3hxul")
-
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 40)
+scale = Vector2(0.12, 0.12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-0.5, 9.5)
-shape = SubResource("RectangleShape2D_xpgdi")
+position = Vector2(0, -254.167)
+scale = Vector2(5, 12.5)
+shape = SubResource("RectangleShape2D_3hxul")
 
 [node name="cooldown" type="Timer" parent="."]
 
@@ -436,7 +427,6 @@ libraries = {
 }
 
 [node name="escudo_area" type="Area2D" parent="."]
-visible = false
 scale = Vector2(0.24, 0.24)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="escudo_area"]
@@ -485,7 +475,6 @@ stream = ExtResource("7_xs1x8")
 stream = ExtResource("8_g75g6")
 volume_db = -5.0
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]
 [connection signal="timeout" from="cooldown_cambio_personaje" to="." method="_on_cooldown_cambio_personaje_timeout"]
 [connection signal="timeout" from="escudo_area/escudo/TiempoEscudo" to="." method="_on_tiempo_escudo_timeout"]

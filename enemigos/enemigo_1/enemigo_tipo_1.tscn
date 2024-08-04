@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://vh08w3iktclu"]
+[gd_scene load_steps=11 format=3 uid="uid://vh08w3iktclu"]
 
 [ext_resource type="Script" path="res://scripts/enemigo_tipo_1.gd" id="1_2ve3k"]
 [ext_resource type="Texture2D" uid="uid://dltm4se60jby1" path="res://assets/enemigos/ave/ave/ave.png" id="2_lah6f"]
@@ -91,6 +91,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1s0xh"]
 size = Vector2(36, 104)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dgklh"]
+size = Vector2(104, 36)
+
 [node name="eneimago_tipo_1" type="CharacterBody2D" groups=["enemigo"]]
 script = ExtResource("1_2ve3k")
 
@@ -118,5 +121,9 @@ shape = SubResource("RectangleShape2D_1s0xh")
 [node name="ataque" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_ttnki")
 bus = &"fx"
+
+[node name="hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_dgklh")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_entered"]

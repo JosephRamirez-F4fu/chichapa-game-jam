@@ -41,6 +41,8 @@ func _on_area_entered(area):
 			dead()
 			
 func dead():
+	set_physics_process(false)
 	$AnimationPlayer.play("morir")
 	await $AnimationPlayer.animation_finished
 	queue_free()
+

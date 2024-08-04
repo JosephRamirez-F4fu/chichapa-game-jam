@@ -47,7 +47,6 @@ var modos := {
 }
 
 func _ready():
-	add_to_group("Jugador")
 	cambiar_modo(0)
 
 func _physics_process(delta):
@@ -200,3 +199,19 @@ func _on_tiempo_aura_timeout():
 	$aura/TiempoAura.stop()
 	$aura.visible = false
 	$aura/AudioStreamPlayer.stop()
+
+
+func take_damage(amount):
+	get_tree().get_nodes_in_group("barra_vida_player")[0].disminuirVida(amount)
+	if get_tree().get_nodes_in_group("barra_vida_player")[0].get_vida() <= 0:
+		die()
+
+func die():
+	set_physics_process(false)
+	$AnimationPlayer.play("morir")
+	await  ($AnimationPlayer.animation_finished)
+	queue_free()
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("enemigo"):
+		take_damage(30)
