@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cvn2ohnvye0o7"]
+[gd_scene load_steps=13 format=3 uid="uid://cvn2ohnvye0o7"]
 
 [ext_resource type="Texture2D" uid="uid://ccuufefet5qs8" path="res://assets/fondo/back_ground.png" id="1_7dy7w"]
 [ext_resource type="Script" path="res://scripts/Mundo.gd" id="1_32ajb"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b0s20xbug6sdw" path="res://hud/relleno de barra.png" id="7_xrwcx"]
 [ext_resource type="AudioStream" uid="uid://dptiakdhlsomt" path="res://assets/sounds/A2 Musica-Menu-del-juego-y-Momento-tranquilo.ogg" id="10_wj6gx"]
 [ext_resource type="PackedScene" uid="uid://c5140vedybm61" path="res://enemigos/enemigo_tipo_2.tscn" id="11_aphsi"]
+[ext_resource type="PackedScene" uid="uid://vh08w3iktclu" path="res://enemigos/enemigo_1/enemigo_tipo_1.tscn" id="12_kyh2a"]
 
 [node name="Mundo" type="Node2D"]
 script = ExtResource("1_32ajb")
@@ -92,5 +93,8 @@ autoplay = true
 
 [node name="enemigo tipo 2" parent="." instance=ExtResource("11_aphsi")]
 position = Vector2(1765, 678)
+
+[node name="eneimago_tipo_1" parent="." instance=ExtResource("12_kyh2a")]
+position = Vector2(465, 492)
 
 [connection signal="update_personaje" from="Jugador" to="." method="_on_jugador_update_personaje"]

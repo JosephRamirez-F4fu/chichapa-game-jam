@@ -32,18 +32,23 @@ func detect():
 		var obj = $right.get_collider()
 		if obj.is_in_group("Jugador"):
 			persiguir = true
+			$AnimationPlayer.play("rotar")
 			velocity.x = SPEED_PERSEGUIR
 			$Sprite2D.flip_h = true
-		persiguir = false
+		else:
+			persiguir = false
 	
 	if $left.is_colliding():
 		var obj = $left.get_collider()
 		if obj.is_in_group("Jugador"):
 			persiguir = true
+			$AnimationPlayer.play("rotar")
 			velocity.x = -SPEED_PERSEGUIR
 			$Sprite2D.flip_h = false
 		else:
 			persiguir = false
+	
+	
 
 func _on_area_2d_body_entered(body):
 	pass # Replace with function body.

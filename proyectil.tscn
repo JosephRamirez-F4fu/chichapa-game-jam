@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://nisabqqmrj0j"]
+[gd_scene load_steps=4 format=3 uid="uid://b57xbt0eri220"]
 
 [ext_resource type="Script" path="res://scripts/proyectil.gd" id="1_lepuy"]
 [ext_resource type="Texture2D" uid="uid://blcf58vvj3w1o" path="res://assets/jugador/flechero/flecha.png" id="2_0ih47"]
