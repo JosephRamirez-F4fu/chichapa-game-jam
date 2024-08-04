@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dxqk7k7lf77cl"
+path="res://.godot/imported/Pajaro.wav-66ca958606ef0a4e0b0b620a3d5b3c10.sample"
+
+[deps]
+
+source_file="res://assets/music/GAME JAM 2024/EFECTOS DE SONIDO/ATAQUE DEL ENEMIGO/Pajaro.wav"
+dest_files=["res://.godot/imported/Pajaro.wav-66ca958606ef0a4e0b0b620a3d5b3c10.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

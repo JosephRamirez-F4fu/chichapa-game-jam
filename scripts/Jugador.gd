@@ -13,7 +13,6 @@ enum Modo {
 	FLECHERO,
 	MAGO,
 	TANQUE,
-	
 }
 
 

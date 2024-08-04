@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dq5slp7e4xuvv"
+path="res://.godot/imported/Curacion 2.wav-c2cdf4d47a0bcd16e959ff9cb40afbc5.sample"
+
+[deps]
+
+source_file="res://assets/music/GAME JAM 2024/EFECTOS DE SONIDO/CURACION/Curacion 2.wav"
+dest_files=["res://.godot/imported/Curacion 2.wav-c2cdf4d47a0bcd16e959ff9cb40afbc5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://rsvwglh806k1"
+path="res://.godot/imported/Muerte _.wav-a570326e131afde692850253ad46664a.sample"
+
+[deps]
+
+source_file="res://assets/music/GAME JAM 2024/EFECTOS DE SONIDO/MUERTE DEL ENEMIGO/Muerte _.wav"
+dest_files=["res://.godot/imported/Muerte _.wav-a570326e131afde692850253ad46664a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
