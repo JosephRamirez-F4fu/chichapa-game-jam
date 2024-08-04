@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:assets/jugador/curador/aura.png.import
-uid="uid://4j4rda4yi3qu"
-path="res://.godot/imported/aura.png-ca1d8cb80fe393fcd6160ddbef4c9e7c.ctex"
-========
-uid="uid://dcyoo4wanlhvo"
+uid="uid://b7n7yr2vd2x5e"
 path="res://.godot/imported/piso_2.png-36fe6b52003fc8c25d7ddd6abf89853d.ctex"
->>>>>>>> ea2e24ca3107a0e8c497086c69c6dea2acdd3070:assets/piso/piso_2.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:assets/jugador/curador/aura.png.import
-source_file="res://assets/jugador/curador/aura.png"
-dest_files=["res://.godot/imported/aura.png-ca1d8cb80fe393fcd6160ddbef4c9e7c.ctex"]
-========
 source_file="res://assets/piso/piso_2.png"
 dest_files=["res://.godot/imported/piso_2.png-36fe6b52003fc8c25d7ddd6abf89853d.ctex"]
->>>>>>>> ea2e24ca3107a0e8c497086c69c6dea2acdd3070:assets/piso/piso_2.png.import
 
 [params]
 

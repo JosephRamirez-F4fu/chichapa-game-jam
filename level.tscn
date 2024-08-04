@@ -1,8 +1,8 @@
 [gd_scene load_steps=70 format=3 uid="uid://b0n3fee2d1b0w"]
 
 [ext_resource type="Texture2D" uid="uid://wvrv7cjhtwcu" path="res://assets/columnas/bridge_6.png" id="1_eeq7u"]
-[ext_resource type="Texture2D" uid="uid://76ht3efpmjaa" path="res://assets/piso/piso_1.png" id="2_c1tu1"]
-[ext_resource type="Texture2D" uid="uid://dcyoo4wanlhvo" path="res://assets/piso/piso_2.png" id="3_qcu1s"]
+[ext_resource type="Texture2D" uid="uid://c3dayljfd1ggn" path="res://assets/piso/piso_1.png" id="2_c1tu1"]
+[ext_resource type="Texture2D" uid="uid://b7n7yr2vd2x5e" path="res://assets/piso/piso_2.png" id="3_qcu1s"]
 [ext_resource type="Texture2D" uid="uid://bsj34i33cugdn" path="res://assets/piso/piso_3.png" id="4_buviy"]
 [ext_resource type="Texture2D" uid="uid://b4xxfp3v3ho5b" path="res://assets/mundo/rocas/roca 3.png" id="5_t6u7j"]
 [ext_resource type="Texture2D" uid="uid://d2vftqvovklst" path="res://assets/mundo/rocas/roca 5.png" id="6_hg8vk"]

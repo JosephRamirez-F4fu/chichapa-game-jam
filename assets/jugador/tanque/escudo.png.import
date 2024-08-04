@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:assets/jugador/tanque/escudo.png.import
-uid="uid://bhhdj6430ek7w"
+uid="uid://ygd5vnbjw1wn"
 path="res://.godot/imported/escudo.png-9a5820f63163acc49e9eb8ceef8e836d.ctex"
-========
-uid="uid://4j4rda4yi3qu"
-path="res://.godot/imported/aura.png-ca1d8cb80fe393fcd6160ddbef4c9e7c.ctex"
->>>>>>>> ea2e24ca3107a0e8c497086c69c6dea2acdd3070:assets/jugador/curador/aura.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:assets/jugador/tanque/escudo.png.import
 source_file="res://assets/jugador/tanque/escudo.png"
 dest_files=["res://.godot/imported/escudo.png-9a5820f63163acc49e9eb8ceef8e836d.ctex"]
-========
-source_file="res://assets/jugador/curador/aura.png"
-dest_files=["res://.godot/imported/aura.png-ca1d8cb80fe393fcd6160ddbef4c9e7c.ctex"]
->>>>>>>> ea2e24ca3107a0e8c497086c69c6dea2acdd3070:assets/jugador/curador/aura.png.import
 
 [params]
 

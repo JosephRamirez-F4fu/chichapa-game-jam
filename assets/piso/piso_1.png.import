@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:assets/jugador/tanque/tanque.png.import
-uid="uid://d0a2j87vymxbl"
-path="res://.godot/imported/tanque.png-a42b1f40a8bd33965688235bbd891fe3.ctex"
-========
-uid="uid://76ht3efpmjaa"
+uid="uid://c3dayljfd1ggn"
 path="res://.godot/imported/piso_1.png-8d0032e1ef0642fa13b36b8c8a0ac0d5.ctex"
->>>>>>>> ea2e24ca3107a0e8c497086c69c6dea2acdd3070:assets/piso/piso_1.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:assets/jugador/tanque/tanque.png.import
-source_file="res://assets/jugador/tanque/tanque.png"
-dest_files=["res://.godot/imported/tanque.png-a42b1f40a8bd33965688235bbd891fe3.ctex"]
-========
 source_file="res://assets/piso/piso_1.png"
 dest_files=["res://.godot/imported/piso_1.png-8d0032e1ef0642fa13b36b8c8a0ac0d5.ctex"]
->>>>>>>> ea2e24ca3107a0e8c497086c69c6dea2acdd3070:assets/piso/piso_1.png.import
 
 [params]
 
