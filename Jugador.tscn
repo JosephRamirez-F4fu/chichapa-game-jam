@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://ca83gaaglxobt"]
+[gd_scene load_steps=30 format=3 uid="uid://ca83gaaglxobt"]
 
 [ext_resource type="Script" path="res://scripts/Jugador.gd" id="1_s4f3g"]
 [ext_resource type="Texture2D" uid="uid://boclg27x4aih5" path="res://assets/Transformacion.png" id="2_lgj08"]
@@ -239,9 +239,6 @@ _data = {
 "change": SubResource("Animation_184p3")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7628v"]
-size = Vector2(75, 312.5)
-
 [sub_resource type="Animation" id="Animation_whmdg"]
 length = 0.001
 tracks/0/type = "value"
@@ -435,25 +432,18 @@ libraries = {
 "": SubResource("AnimationLibrary_7u7ud")
 }
 
-[node name="escudo_area" type="Area2D" parent="."]
-visible = false
+[node name="escudo" type="Sprite2D" parent="."]
 scale = Vector2(0.24, 0.24)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="escudo_area"]
-position = Vector2(129.167, 6.25)
-shape = SubResource("RectangleShape2D_7628v")
-
-[node name="escudo" type="Sprite2D" parent="escudo_area"]
 texture = ExtResource("3_r44rj")
 hframes = 3
 
-[node name="AnimationEscudo" type="AnimationPlayer" parent="escudo_area/escudo"]
+[node name="AnimationEscudo" type="AnimationPlayer" parent="escudo"]
 speed_scale = 3.0
 libraries = {
 "": SubResource("AnimationLibrary_bp0ya")
 }
 
-[node name="TiempoEscudo" type="Timer" parent="escudo_area/escudo"]
+[node name="TiempoEscudo" type="Timer" parent="escudo"]
 wait_time = 7.0
 
 [node name="aura" type="Sprite2D" parent="."]
@@ -488,5 +478,5 @@ volume_db = -5.0
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]
 [connection signal="timeout" from="cooldown_cambio_personaje" to="." method="_on_cooldown_cambio_personaje_timeout"]
-[connection signal="timeout" from="escudo_area/escudo/TiempoEscudo" to="." method="_on_tiempo_escudo_timeout"]
+[connection signal="timeout" from="escudo/TiempoEscudo" to="." method="_on_tiempo_escudo_timeout"]
 [connection signal="timeout" from="aura/TiempoAura" to="." method="_on_tiempo_aura_timeout"]
