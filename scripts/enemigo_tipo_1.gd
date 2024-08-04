@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+var vida = 3
 var SPEED = 40
 var range = 400
 var original_position
@@ -13,18 +13,33 @@ func _ready():
 	original_position = position.x
 
 func movimiento(delta):
+	
 	if position.x > original_position+range:
 		SPEED = SPEED*-1
 	elif position.x < original_position-range:
 		SPEED = SPEED*-1
-		
+			
 	if SPEED < 0 : 
 		$Sprite2D.flip_h = 0
 	elif SPEED > 0 : 
 		$Sprite2D.flip_h = 1
+			
 		
 	$AnimationPlayer.play("move")
 	position.x = position.x + SPEED*delta
 	
 func _process(delta):
-	movimiento(delta)
+	if not vida <= 0:
+		movimiento(delta)
+	
+func _on_area_entered(area):
+	if area.is_in_group("proyectil"):
+		$ataque.play()
+		vida -= 1
+		if vida <= 0:
+			dead()
+			
+func dead():
+	$AnimationPlayer.play("morir")
+	await $AnimationPlayer.animation_finished
+	queue_free()

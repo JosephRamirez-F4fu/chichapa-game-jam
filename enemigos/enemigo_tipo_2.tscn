@@ -1,10 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://c5140vedybm61"]
+[gd_scene load_steps=10 format=3 uid="uid://c5140vedybm61"]
 
 [ext_resource type="Script" path="res://scripts/enemigo_tipo_2.gd" id="1_5iff6"]
 [ext_resource type="Texture2D" uid="uid://dfhfdxfshnu4" path="res://assets/enemigos/armadillo/armadillo.png" id="2_nuvxf"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_i5avy"]
-radius = 15.0748
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_40jao"]
+size = Vector2(32, 24)
 
 [sub_resource type="Animation" id="Animation_sp725"]
 length = 0.001
@@ -275,9 +275,6 @@ _data = {
 "rotar": SubResource("Animation_cll04")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0wbc"]
-size = Vector2(189, 114)
-
 [node name="enemigo tipo 2" type="CharacterBody2D"]
 script = ExtResource("1_5iff6")
 
@@ -289,19 +286,14 @@ texture = ExtResource("2_nuvxf")
 hframes = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1.5)
-shape = SubResource("CircleShape2D_i5avy")
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_40jao")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../CollisionShape2D")
 libraries = {
 "": SubResource("AnimationLibrary_p1nt1")
 }
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_o0wbc")
 
 [node name="right" type="RayCast2D" parent="."]
 position = Vector2(16, 0)
@@ -310,5 +302,3 @@ target_position = Vector2(200, 0)
 [node name="left" type="RayCast2D" parent="."]
 position = Vector2(-16, 0)
 target_position = Vector2(-200, 0)
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
