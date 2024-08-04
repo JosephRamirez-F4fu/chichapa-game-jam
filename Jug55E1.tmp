@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ca83gaaglxobt"]
+[gd_scene load_steps=14 format=3 uid="uid://ca83gaaglxobt"]
 
 [ext_resource type="Script" path="res://scripts/Jugador.gd" id="1_s4f3g"]
 [ext_resource type="Texture2D" uid="uid://boclg27x4aih5" path="res://assets/Transformacion.png" id="2_lgj08"]
@@ -166,28 +166,13 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ed8yp"]
-_data = {
-"RESET": SubResource("Animation_igq2m"),
-"flechero_habilidad": SubResource("Animation_a2ql0"),
-"flechero_jump": SubResource("Animation_fxxy0"),
-"flechero_walk": SubResource("Animation_yyhhf"),
-"mago_jump": SubResource("Animation_sq56s"),
-"mago_walk": SubResource("Animation_8m2i5"),
-"tanque_jump": SubResource("Animation_mo4w3"),
-"tanque_walk": SubResource("Animation_wi6ne")
-}
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3hxul"]
-size = Vector2(40, 40)
-
-[sub_resource type="Animation" id="Animation_184p3"]
+[sub_resource type="Animation" id="Animation_b0aom"]
 resource_name = "change"
 length = 4.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
+tracks/0/path = NodePath("transformacion:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -199,7 +184,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:visible")
+tracks/1/path = NodePath("transformacion:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -211,7 +196,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath(".:modulate")
+tracks/2/path = NodePath("transformacion:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -221,10 +206,21 @@ tracks/2/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_7u7ud"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ed8yp"]
 _data = {
-"change": SubResource("Animation_184p3")
+"RESET": SubResource("Animation_igq2m"),
+"change": SubResource("Animation_b0aom"),
+"flechero_habilidad": SubResource("Animation_a2ql0"),
+"flechero_jump": SubResource("Animation_fxxy0"),
+"flechero_walk": SubResource("Animation_yyhhf"),
+"mago_jump": SubResource("Animation_sq56s"),
+"mago_walk": SubResource("Animation_8m2i5"),
+"tanque_jump": SubResource("Animation_mo4w3"),
+"tanque_walk": SubResource("Animation_wi6ne")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3hxul"]
+size = Vector2(40, 40)
 
 [node name="Jugador" type="CharacterBody2D"]
 script = ExtResource("1_s4f3g")
@@ -252,19 +248,11 @@ shape = SubResource("RectangleShape2D_3hxul")
 wait_time = 4.0
 
 [node name="transformacion" type="Sprite2D" parent="."]
-visible = false
 modulate = Color(1, 1, 1, 0)
 position = Vector2(0, -46)
 scale = Vector2(0.24, 0.24)
 texture = ExtResource("2_lgj08")
 hframes = 5
-frame = 1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="transformacion"]
-speed_scale = 4.0
-libraries = {
-"": SubResource("AnimationLibrary_7u7ud")
-}
 
 [connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]
 [connection signal="timeout" from="cooldown_cambio_personaje" to="." method="_on_cooldown_cambio_personaje_timeout"]

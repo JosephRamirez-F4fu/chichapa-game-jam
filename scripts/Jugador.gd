@@ -18,6 +18,8 @@ enum Modo {
 @onready var collision = $CollisionShape2D
 @onready var cooldown = $cooldown
 @onready var cooldown_cambio_personaje = $cooldown_cambio_personaje
+@onready var change = $transformacion
+
 var flecha = preload("res://proyectil.tscn")
 
 var current_mode := Modo.FLECHERO
@@ -98,6 +100,7 @@ func cambiar_modo(op):
 	if cooldown_cambio_personaje.is_stopped():
 		cooldown_cambio_personaje.start()
 		current_mode = op
+		$transformacion/AnimationPlayer.play("change")
 		match op:
 			0:
 				collision.scale.y = 1.5
