@@ -10,5 +10,5 @@ size = Vector2(560, 235.75)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_u6gm1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemigo"]]
 shape = SubResource("RectangleShape2D_873ux")

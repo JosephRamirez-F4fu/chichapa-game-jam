@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cvn2ohnvye0o7"]
+[gd_scene load_steps=14 format=3 uid="uid://cvn2ohnvye0o7"]
 
 [ext_resource type="Texture2D" uid="uid://ccuufefet5qs8" path="res://assets/fondo/back_ground.png" id="1_7dy7w"]
 [ext_resource type="Script" path="res://scripts/Mundo.gd" id="1_32ajb"]
@@ -7,8 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://buiofukqwdnni" path="res://assets/columnas/bridge_2.png" id="3_cy5pi"]
 [ext_resource type="Texture2D" uid="uid://ddbhh78lbjqqe" path="res://hud/indicador personaje.png" id="4_h2sb8"]
 [ext_resource type="PackedScene" uid="uid://b0n3fee2d1b0w" path="res://level.tscn" id="5_bt6o1"]
-[ext_resource type="Texture2D" uid="uid://bd38dgm62m4lu" path="res://hud/barra de vida.png" id="6_sb02h"]
-[ext_resource type="Texture2D" uid="uid://b0s20xbug6sdw" path="res://hud/relleno de barra.png" id="7_xrwcx"]
+[ext_resource type="Texture2D" uid="uid://2r5o4qjxdlim" path="res://hud/barra de vida corregida.png" id="6_o3g5t"]
+[ext_resource type="Texture2D" uid="uid://lsuwdafvd4ee" path="res://hud/relleno de barra corregida.png" id="7_6w6ol"]
+[ext_resource type="Script" path="res://scripts/barra_vida.gd" id="8_okamu"]
 [ext_resource type="AudioStream" uid="uid://dptiakdhlsomt" path="res://assets/sounds/A2 Musica-Menu-del-juego-y-Momento-tranquilo.ogg" id="10_wj6gx"]
 [ext_resource type="PackedScene" uid="uid://c5140vedybm61" path="res://enemigos/enemigo_tipo_2.tscn" id="11_aphsi"]
 [ext_resource type="PackedScene" uid="uid://vh08w3iktclu" path="res://enemigos/enemigo_1/enemigo_tipo_1.tscn" id="12_kyh2a"]
@@ -64,7 +65,7 @@ scale = Vector2(0.24, 0.24)
 texture = ExtResource("4_h2sb8")
 hframes = 3
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="HUD"]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="HUD" groups=["barra_vida_player"]]
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 494.0
@@ -72,8 +73,9 @@ offset_bottom = 61.0
 step = 0.0
 value = 100.0
 nine_patch_stretch = true
-texture_under = ExtResource("6_sb02h")
-texture_progress = ExtResource("7_xrwcx")
+texture_under = ExtResource("6_o3g5t")
+texture_progress = ExtResource("7_6w6ol")
+script = ExtResource("8_okamu")
 
 [node name="StaticBody2D" parent="." instance=ExtResource("5_bt6o1")]
 position = Vector2(-483, 651)
