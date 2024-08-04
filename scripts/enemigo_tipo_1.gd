@@ -34,6 +34,7 @@ func _process(delta):
 	
 func _on_area_entered(area):
 	if area.is_in_group("proyectil"):
+		area.queue_free()
 		$ataque.play()
 		vida -= 1
 		if vida <= 0:
