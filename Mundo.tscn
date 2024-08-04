@@ -94,9 +94,14 @@ stream = ExtResource("10_wj6gx")
 autoplay = true
 
 [node name="enemigo tipo 2" parent="." instance=ExtResource("11_aphsi")]
-position = Vector2(1765, 678)
+position = Vector2(3862, 575)
 
-[node name="eneimago_tipo_1" parent="." instance=ExtResource("12_kyh2a")]
-position = Vector2(465, 492)
+[node name="pajaros" type="CanvasGroup" parent="."]
+
+[node name="eneimago_tipo_1" parent="pajaros" instance=ExtResource("12_kyh2a")]
+position = Vector2(1553, 616)
+
+[node name="eneimago_tipo_2" parent="pajaros" instance=ExtResource("12_kyh2a")]
+position = Vector2(2684, 564)
 
 [connection signal="update_personaje" from="Jugador" to="." method="_on_jugador_update_personaje"]
