@@ -13,6 +13,8 @@ enum Modo {
 	TANQUE,
 }
 
+signal update_personaje
+
 @onready var animated_sprite = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var collision = $CollisionShape2D
@@ -115,14 +117,15 @@ func cambiar_modo(op):
 				sprite.hframes = 8
 				sprite.offset.y = -300
 
-		actualizar_modo()
+		actualizar_modo(op)
 
-func actualizar_modo():
+func actualizar_modo(op):
 	var modo_actual = modos[current_mode]
 	sprite.texture = modo_actual["sprite"]
 	_on_tiempo_escudo_timeout()
 	_on_tiempo_aura_timeout()
 	$CambioPersonaje.play()
+	update_personaje.emit(op)
 
 func _input(event):
 	if event is InputEventKey and event.pressed:
