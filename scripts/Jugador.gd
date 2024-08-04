@@ -13,6 +13,7 @@ enum Modo {
 }
 
 signal update_personaje
+signal muerte
 
 @onready var animated_sprite = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite2D
@@ -30,24 +31,28 @@ var modos := {
 		"jump": "tanque_jump",
 		"walk": "tanque_walk",
 		"habilidad": "tanque_habilidad",
+		"muerte": "tanque_muerte",
 		"sprite": preload("res://assets/jugador/tanque/tanque.png")
 	},
 	Modo.MAGO: {
 		"jump": "mago_jump",
 		"walk": "mago_walk",
 		"habilidad": "mago_habilidad",
+		"muerte": "mago_muerte",
 		"sprite": preload("res://assets/jugador/curador/curador.png")
 	},
 	Modo.FLECHERO: {
 		"jump": "flechero_jump",
 		"walk": "flechero_walk",
 		"habilidad": "flechero_habilidad",
+		"muerte": "flechero_muerte",
 		"sprite": preload("res://assets/jugador/flechero/arquero.png")
 	}
 }
 
 func _ready():
 	cambiar_modo(0)
+	self.add_to_group("Jugador")
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -95,6 +100,10 @@ func play_jump_animation():
 func play_habilidad_animation():
 	var modo_actual = modos[current_mode]
 	animated_sprite.play(modo_actual["habilidad"])
+
+func play_muerte_animation():
+	var modo_actual = modos[current_mode]
+	animated_sprite.play(modo_actual["muerte"])
 	
 func cambiar_modo(op):
 	if cooldown_cambio_personaje.is_stopped():
@@ -104,14 +113,17 @@ func cambiar_modo(op):
 		match op:
 			0:
 				collision.scale.y = 1.5
+				$Area2D/CollisionShape2D.scale.y = 1
 				sprite.hframes = 9
 				sprite.offset.y = -330
 			1:
 				collision.scale.y = 1
+				$Area2D/CollisionShape2D.scale.y = 0.6
 				sprite.hframes = 8
 				sprite.offset.y = -420
 			2:
 				collision.scale.y = 1.8
+				$Area2D/CollisionShape2D.scale.y = 1.3
 				sprite.hframes = 8
 				sprite.offset.y = -300
 
@@ -135,7 +147,6 @@ func _input(event):
 			cambiar_modo(2)
 
 func usar_habilidad():
-	var modo_actual = modos[current_mode]
 	if cooldown.is_stopped():
 		cooldown.start()
 		match current_mode:
@@ -191,19 +202,22 @@ func _on_tiempo_aura_timeout():
 
 
 func take_damage(amount):
+	$hit.play()
 	get_tree().get_nodes_in_group("barra_vida_player")[0].disminuirVida(amount)
 	if get_tree().get_nodes_in_group("barra_vida_player")[0].get_vida() <= 0:
 		die()
 
 func die():
+	muerte.emit()
+	$derrota.play()
 	set_physics_process(false)
-	#$AnimationPlayer.play("morir")
-	#await ($AnimationPlayer.animation_finished)
+	play_muerte_animation()
+	await (animated_sprite.animation_finished)
 	_restart_scene()
 
 func _restart_scene() -> void:
 	get_tree().reload_current_scene()
 
 func _on_area_2d_body_entered(body):
-	if body.is_in_group("enemigo") and  $escudo/TiempoEscudo.is_stopped():
-		take_damage(30)
+	if body.is_in_group("enemigo") and $escudo/TiempoEscudo.is_stopped():
+		take_damage(21)

@@ -11,10 +11,12 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var persiguir: bool = false
 
 func _ready():
-	velocity.x = speed
+	velocity.x = -speed
 
 func _physics_process(delta):
 	detect()
+	if not is_on_floor():
+		velocity.y += gravity * delta
 	if !persiguir:
 		$AnimationPlayer.play("move")
 		if is_on_wall():

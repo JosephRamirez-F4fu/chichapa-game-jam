@@ -706,22 +706,22 @@ position = Vector2(78492.6, -2139)
 shape = SubResource("RectangleShape2D_ve1vf")
 
 [node name="eneimago_tipo_1" parent="." instance=ExtResource("34_68f0i")]
-position = Vector2(4447, -150)
+position = Vector2(4441, -129)
 
 [node name="eneimago_tipo_2" parent="." instance=ExtResource("34_68f0i")]
-position = Vector2(4681, -155)
+position = Vector2(4675, -109)
 
 [node name="eneimago_tipo_3" parent="." instance=ExtResource("34_68f0i")]
-position = Vector2(5534, -161)
+position = Vector2(5542, -109)
 
 [node name="eneimago_tipo_4" parent="." instance=ExtResource("34_68f0i")]
 position = Vector2(5712, -148)
 
 [node name="eneimago_tipo_5" parent="." instance=ExtResource("34_68f0i")]
-position = Vector2(5867, -174)
+position = Vector2(5899, -187)
 
 [node name="eneimago_tipo_6" parent="." instance=ExtResource("34_68f0i")]
-position = Vector2(6684, -151)
+position = Vector2(6687, -180)
 
 [node name="eneimago_tipo_7" parent="." instance=ExtResource("34_68f0i")]
 position = Vector2(9096, -152)
@@ -876,3 +876,9 @@ position = Vector2(79063, -2246)
 
 [node name="enemigo tipo 18" parent="." instance=ExtResource("35_er0oj")]
 position = Vector2(77479, -2198)
+
+[node name="enemigo tipo 19" parent="." instance=ExtResource("35_er0oj")]
+position = Vector2(3695, -72)
+
+[node name="enemigo tipo 20" parent="." instance=ExtResource("35_er0oj")]
+position = Vector2(9383, -104)

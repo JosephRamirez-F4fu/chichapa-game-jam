@@ -8,9 +8,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if not $fondo.playing:
-		$fondo.play()
-
+	pass
 
 
 
@@ -23,3 +21,14 @@ func _on_jugador_update_personaje(op):
 		2:
 			$HUD/Indicador.frame = 1
 
+
+
+func _on_jugador_muerte():
+	$fondo.stop() # Replace with function body.
+
+
+
+func _on_fall_body_entered(body):
+	print("a")
+	if body.is_in_group("Jugador"):
+		body.die()

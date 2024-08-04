@@ -6,6 +6,7 @@ var direccion = 1.0
 
 func _ready():
 	self.add_to_group("proyectil")
+	$Timer.start()
 	if direccion == 1:
 		sprite.flip_h = false
 	elif direccion == -1:
@@ -14,3 +15,7 @@ func _ready():
 func _process(delta):
 	position.x += SPEED*delta*direccion
 
+
+
+func _on_timer_timeout():
+	queue_free() # Replace with function body.

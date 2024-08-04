@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cvn2ohnvye0o7"]
+[gd_scene load_steps=15 format=3 uid="uid://cvn2ohnvye0o7"]
 
 [ext_resource type="Texture2D" uid="uid://ccuufefet5qs8" path="res://assets/fondo/back_ground.png" id="1_7dy7w"]
 [ext_resource type="Script" path="res://scripts/Mundo.gd" id="1_32ajb"]
@@ -13,6 +13,9 @@
 [ext_resource type="AudioStream" uid="uid://dptiakdhlsomt" path="res://assets/sounds/A2 Musica-Menu-del-juego-y-Momento-tranquilo.ogg" id="10_wj6gx"]
 [ext_resource type="PackedScene" uid="uid://c5140vedybm61" path="res://enemigos/enemigo_tipo_2.tscn" id="11_aphsi"]
 [ext_resource type="PackedScene" uid="uid://vh08w3iktclu" path="res://enemigos/enemigo_1/enemigo_tipo_1.tscn" id="12_kyh2a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3sn12"]
+size = Vector2(87830.1, 42.5)
 
 [node name="Mundo" type="Node2D"]
 script = ExtResource("1_32ajb")
@@ -99,9 +102,17 @@ position = Vector2(3862, 575)
 [node name="pajaros" type="CanvasGroup" parent="."]
 
 [node name="eneimago_tipo_1" parent="pajaros" instance=ExtResource("12_kyh2a")]
-position = Vector2(1553, 616)
+position = Vector2(1570, 633)
 
 [node name="eneimago_tipo_2" parent="pajaros" instance=ExtResource("12_kyh2a")]
 position = Vector2(2684, 564)
 
+[node name="fall" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fall"]
+position = Vector2(42928.1, 912.75)
+shape = SubResource("RectangleShape2D_3sn12")
+
+[connection signal="muerte" from="Jugador" to="." method="_on_jugador_muerte"]
 [connection signal="update_personaje" from="Jugador" to="." method="_on_jugador_update_personaje"]
+[connection signal="body_entered" from="fall" to="." method="_on_fall_body_entered"]
