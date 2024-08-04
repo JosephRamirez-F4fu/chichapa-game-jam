@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cvn2ohnvye0o7"]
+[gd_scene load_steps=13 format=3 uid="uid://cvn2ohnvye0o7"]
 
 [ext_resource type="Texture2D" uid="uid://ccuufefet5qs8" path="res://assets/fondo/back_ground.png" id="1_7dy7w"]
 [ext_resource type="Texture2D" uid="uid://cy0ktdco60x6v" path="res://assets/columnas/columnas/bridge_1.png" id="2_7awwu"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://cbd8kkbd3dtae" path="res://components/piso_1.tscn" id="5_mhvci"]
 [ext_resource type="PackedScene" uid="uid://xcqf0opb43w1" path="res://components/piso_3.tscn" id="6_bpb77"]
 [ext_resource type="PackedScene" uid="uid://bdnsjita83s7q" path="res://components/piso_2.tscn" id="7_y1v0a"]
+[ext_resource type="PackedScene" uid="uid://vh08w3iktclu" path="res://enemigo_tipo_1.tscn" id="11_o16d6"]
+[ext_resource type="PackedScene" uid="uid://c5140vedybm61" path="res://enemigo_tipo_2.tscn" id="12_v4c6g"]
 
 [node name="Mundo" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [731.0]
@@ -74,11 +76,9 @@ position = Vector2(-188, 651)
 
 [node name="StaticBody2D3" parent="." instance=ExtResource("6_bpb77")]
 position = Vector2(588, 688)
-scale = Vector2(0.24, 0.24)
 
 [node name="StaticBody2D4" parent="." instance=ExtResource("7_y1v0a")]
 position = Vector2(882, 667)
-scale = Vector2(0.24, 0.24)
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("7_y1v0a")]
 position = Vector2(342, 666)
@@ -101,11 +101,17 @@ position = Vector2(3239, 691)
 [node name="StaticBody2D10" parent="." instance=ExtResource("7_y1v0a")]
 position = Vector2(3734, 695)
 
-[node name="Jugador" parent="StaticBody2D10" instance=ExtResource("2_ny15v")]
-position = Vector2(-15200, -1179.17)
-scale = Vector2(8.33333, 8.33333)
+[node name="enemigo tipo 2" parent="." instance=ExtResource("12_v4c6g")]
+position = Vector2(1167, 328)
 
-[node name="Camera2D" type="Camera2D" parent="StaticBody2D10/Jugador"]
+[node name="Jugador" parent="." instance=ExtResource("2_ny15v")]
+position = Vector2(86, 411.999)
+scale = Vector2(2, 2)
+
+[node name="Camera2D" type="Camera2D" parent="Jugador"]
 limit_bottom = 700
 position_smoothing_enabled = true
-position_smoothing_speed = 8.0
+position_smoothing_speed = 1.0
+
+[node name="eneimago_tipo_1" parent="." instance=ExtResource("11_o16d6")]
+position = Vector2(518, 134)

@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://ca83gaaglxobt"]
+
+[ext_resource type="Script" path="res://scripts/Jugador.gd" id="1_s4f3g"]
+[ext_resource type="Texture2D" uid="uid://b083v0jyyehhj" path="res://assets/jugador/flechero/arquero.png" id="2_twrq1"]
+
+[sub_resource type="Animation" id="Animation_yyhhf"]
+resource_name = "flechero_walk"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_igq2m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ed8yp"]
+_data = {
+"RESET": SubResource("Animation_igq2m"),
+"flechero_walk": SubResource("Animation_yyhhf")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3hxul"]
+size = Vector2(40, 40)
+
+[node name="Jugador" type="CharacterBody2D"]
+script = ExtResource("1_s4f3g")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+speed_scale = 3.5
+libraries = {
+"": SubResource("AnimationLibrary_ed8yp")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 40)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("2_twrq1")
+offset = Vector2(0, -330)
+hframes = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9.5)
+scale = Vector2(0.6, 1.5)
+shape = SubResource("RectangleShape2D_3hxul")
+
+[node name="cooldown" type="Timer" parent="."]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]

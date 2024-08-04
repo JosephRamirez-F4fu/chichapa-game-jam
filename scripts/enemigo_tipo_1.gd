@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-var SPEED = 2
+var SPEED = 200
 const JUMP_VELOCITY = -400.0
 var range = 100
 var original_position
@@ -13,12 +13,12 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _ready():
 	original_position = position.x
 
-func movimiento():
+func movimiento(delta):
 	if position.x > original_position+range:
 		SPEED = SPEED*-1
 	elif position.x < original_position-range:
 		SPEED = SPEED*-1
-	position.x = position.x + SPEED
+	position.x += SPEED*delta
 	
 func _process(delta):
-	movimiento()
+	movimiento(delta)
