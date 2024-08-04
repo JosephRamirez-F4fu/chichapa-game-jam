@@ -12,6 +12,7 @@ func _process(delta):
 
 
 
+
 func _on_jugador_update_personaje(op):
 	match op:
 		0:

@@ -50,3 +50,8 @@ func detect():
 		else:
 			persiguir = false
 			$AnimationPlayer.play("move")
+
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("personaje"):
+		body.take_damage(15)
