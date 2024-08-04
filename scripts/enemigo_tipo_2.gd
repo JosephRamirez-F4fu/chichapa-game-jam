@@ -1,32 +1,49 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+var speed = 80.0
+const SPEED_PERSEGUIR = 200
 const JUMP_VELOCITY = -400.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var persiguir: bool = false
 
+func _ready():
+	velocity.x = speed
 
 func _physics_process(delta):
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y += gravity * delta
-
-	# Handle Jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	detect()
+	if !persiguir:
+		$AnimationPlayer.play("move")
+		if is_on_wall():
+			if !$Sprite2D.flip_h:
+				velocity.x = speed
+			else:
+				velocity.x = -speed
+		if velocity.x < 0:
+			$Sprite2D.flip_h = false
+		elif velocity.x > 0:
+			$Sprite2D.flip_h = true
 	move_and_slide()
 
+func detect():
+	if $right.is_colliding():
+		var obj = $right.get_collider()
+		if obj.is_in_group("Jugador"):
+			persiguir = true
+			velocity.x = SPEED_PERSEGUIR
+			$Sprite2D.flip_h = true
+		persiguir = false
+	
+	if $left.is_colliding():
+		var obj = $left.get_collider()
+		if obj.is_in_group("Jugador"):
+			persiguir = true
+			velocity.x = -SPEED_PERSEGUIR
+			$Sprite2D.flip_h = false
+		else:
+			persiguir = false
 
 func _on_area_2d_body_entered(body):
 	pass # Replace with function body.
