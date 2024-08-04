@@ -210,7 +210,8 @@ func die():
 	set_physics_process(false)
 	$AnimationPlayer.play("morir")
 	await  ($AnimationPlayer.animation_finished)
-	queue_free()
+	var current_scene_path = get_tree().current_scene.filename
+	get_tree().change_scene(current_scene_path)
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("enemigo"):
