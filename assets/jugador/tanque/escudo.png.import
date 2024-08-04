@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbyomr45e6wg6"
-path="res://.godot/imported/mago.jpg-6ff93429425d6b77dc606d3c3b31b011.ctex"
+uid="uid://bhhdj6430ek7w"
+path="res://.godot/imported/escudo.png-9a5820f63163acc49e9eb8ceef8e836d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/jugador/mago.jpg"
-dest_files=["res://.godot/imported/mago.jpg-6ff93429425d6b77dc606d3c3b31b011.ctex"]
+source_file="res://assets/jugador/tanque/escudo.png"
+dest_files=["res://.godot/imported/escudo.png-9a5820f63163acc49e9eb8ceef8e836d.ctex"]
 
 [params]
 

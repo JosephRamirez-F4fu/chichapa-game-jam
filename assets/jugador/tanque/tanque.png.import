@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnkc6hnkh0m0k"
-path="res://.godot/imported/escudo.png-4a513d3a1df0bdb636f8bdae0ec730d7.ctex"
+uid="uid://d0a2j87vymxbl"
+path="res://.godot/imported/tanque.png-a42b1f40a8bd33965688235bbd891fe3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/jugador/tanque/tanque/escudo.png"
-dest_files=["res://.godot/imported/escudo.png-4a513d3a1df0bdb636f8bdae0ec730d7.ctex"]
+source_file="res://assets/jugador/tanque/tanque.png"
+dest_files=["res://.godot/imported/tanque.png-a42b1f40a8bd33965688235bbd891fe3.ctex"]
 
 [params]
 

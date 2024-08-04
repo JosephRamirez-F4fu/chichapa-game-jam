@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmpcbx2souyun"
-path="res://.godot/imported/arquero.png-a616ce7e143ba07dbda7cf470290239e.ctex"
+uid="uid://lrehwknb0bhj"
+path="res://.godot/imported/salud 2.png-4f8898f70174a503739db5986433f645.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/jugador/arquero/arquero/arquero.png"
-dest_files=["res://.godot/imported/arquero.png-a616ce7e143ba07dbda7cf470290239e.ctex"]
+source_file="res://assets/jugador/curador/salud 2.png"
+dest_files=["res://.godot/imported/salud 2.png-4f8898f70174a503739db5986433f645.ctex"]
 
 [params]
 

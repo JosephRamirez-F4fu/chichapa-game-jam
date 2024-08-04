@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csd0b1x83kekd"
-path="res://.godot/imported/salud 2.png-e1abe5d37bcb5a946ad91a230dc8dcca.ctex"
+uid="uid://4j4rda4yi3qu"
+path="res://.godot/imported/aura.png-ca1d8cb80fe393fcd6160ddbef4c9e7c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/jugador/curador/curador/salud 2.png"
-dest_files=["res://.godot/imported/salud 2.png-e1abe5d37bcb5a946ad91a230dc8dcca.ctex"]
+source_file="res://assets/jugador/curador/aura.png"
+dest_files=["res://.godot/imported/aura.png-ca1d8cb80fe393fcd6160ddbef4c9e7c.ctex"]
 
 [params]
 

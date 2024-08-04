@@ -3,23 +3,6 @@
 [ext_resource type="Script" path="res://scripts/enemigo_tipo_1.gd" id="1_2ve3k"]
 [ext_resource type="Texture2D" uid="uid://dltm4se60jby1" path="res://assets/enemigos/ave/ave/ave.png" id="2_lah6f"]
 
-[sub_resource type="Animation" id="Animation_j0f55"]
-resource_name = "move"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [0, 3, 1, 3]
-}
-
 [sub_resource type="Animation" id="Animation_v3amt"]
 length = 0.001
 tracks/0/type = "value"
@@ -33,6 +16,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_2wurn"]
+resource_name = "disparar"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 5, 5, 1]
 }
 
 [sub_resource type="Animation" id="Animation_cxlfw"]
@@ -51,9 +50,10 @@ tracks/0/keys = {
 "values": [1, 1, 4]
 }
 
-[sub_resource type="Animation" id="Animation_2wurn"]
-resource_name = "disparar"
+[sub_resource type="Animation" id="Animation_j0f55"]
+resource_name = "move"
 length = 0.4
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -63,8 +63,8 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 5, 5, 1]
+"update": 0,
+"values": [0, 3, 1, 3]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qmjro"]

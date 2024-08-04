@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dt61be4nceonr"
-path="res://.godot/imported/salud 1.png-f5a570421a0aa39db86aae2ee015b862.ctex"
+uid="uid://blcf58vvj3w1o"
+path="res://.godot/imported/flecha.png-4e5e7413904152002adfdc66e150b49c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/jugador/curador/curador/salud 1.png"
-dest_files=["res://.godot/imported/salud 1.png-f5a570421a0aa39db86aae2ee015b862.ctex"]
+source_file="res://assets/jugador/flechero/flecha.png"
+dest_files=["res://.godot/imported/flecha.png-4e5e7413904152002adfdc66e150b49c.ctex"]
 
 [params]
 

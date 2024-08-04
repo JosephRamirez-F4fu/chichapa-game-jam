@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjomy251fshno"
-path="res://.godot/imported/tanque.jpg-dea218e9c46bf9dd6f62a5a9902abcef.ctex"
+uid="uid://b083v0jyyehhj"
+path="res://.godot/imported/arquero.png-97d87f10a2b2a7853c45a1c916e03d64.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/jugador/tanque.jpg"
-dest_files=["res://.godot/imported/tanque.jpg-dea218e9c46bf9dd6f62a5a9902abcef.ctex"]
+source_file="res://assets/jugador/flechero/arquero.png"
+dest_files=["res://.godot/imported/arquero.png-97d87f10a2b2a7853c45a1c916e03d64.ctex"]
 
 [params]
 
