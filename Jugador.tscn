@@ -140,6 +140,9 @@ tracks/0/keys = {
 "values": [0, 1, 3, 6]
 }
 
+[sub_resource type="Animation" id="Animation_1ilrl"]
+resource_name = "morir"
+
 [sub_resource type="Animation" id="Animation_mo4w3"]
 resource_name = "tanque_jump"
 length = 4.5
@@ -171,9 +174,6 @@ tracks/0/keys = {
 "update": 1,
 "values": [0, 1, 2, 3]
 }
-
-[sub_resource type="Animation" id="Animation_1ilrl"]
-resource_name = "morir"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ed8yp"]
 _data = {

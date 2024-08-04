@@ -148,18 +148,17 @@ func usar_habilidad():
 				habilidad_flechero()
 				
 
-	
 func habilidad_tanque():
 	if $escudo_area/escudo/TiempoEscudo.is_stopped():
 		$escudo_area/escudo/TiempoEscudo.start()
 		$escudo_area/escudo.visible = true
 		$escudo_area/CollisionShape2D.visible = true
 		if sprite.flip_h:
-			$escudo_area/escudo.flip_h=1
+			$escudo_area/escudo.flip_h = 1
 			$escudo_area/CollisionShape2D.position.x = -50
 			$escudo_area.position.x = -64
-		else :
-			$escudo_area/escudo.flip_h=0
+		else:
+			$escudo_area/escudo.flip_h = 0
 			$escudo_area/CollisionShape2D.position.x = 50
 			$escudo_area.position.x = 64
 		$escudo_area/escudo/AnimationEscudo.play("proteger")
@@ -190,7 +189,7 @@ func _on_cooldown_cambio_personaje_timeout():
 	cooldown_cambio_personaje.stop() # Replace with function body.
 
 func _on_tiempo_escudo_timeout():
-	$escudo_area/escudo/TiempoEscudo.stop()# Replace with function body.
+	$escudo_area/escudo/TiempoEscudo.stop() # Replace with function body.
 	$escudo_area/escudo/AnimationEscudo.play_backwards("proteger")
 	$escudo_area/escudo.visible = false
 	$escudo_area/CollisionShape2D.visible = false
@@ -208,10 +207,12 @@ func take_damage(amount):
 
 func die():
 	set_physics_process(false)
-	$AnimationPlayer.play("morir")
-	await  ($AnimationPlayer.animation_finished)
-	var current_scene_path = get_tree().current_scene.filename
-	get_tree().change_scene(current_scene_path)
+	#$AnimationPlayer.play("morir")
+	#await ($AnimationPlayer.animation_finished)
+	_restart_scene()
+
+func _restart_scene() -> void:
+	get_tree().reload_current_scene()
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("enemigo"):
