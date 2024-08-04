@@ -20,7 +20,7 @@ signal update_personaje
 @onready var cooldown = $cooldown
 @onready var cooldown_cambio_personaje = $cooldown_cambio_personaje
 @onready var change = $transformacion
-
+ 
 var flecha = preload("res://proyectil.tscn")
 
 var current_mode := Modo.FLECHERO

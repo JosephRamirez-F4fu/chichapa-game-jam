@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://b0n3fee2d1b0w"]
+[gd_scene load_steps=70 format=3 uid="uid://b0n3fee2d1b0w"]
 
 [ext_resource type="Texture2D" uid="uid://wvrv7cjhtwcu" path="res://assets/columnas/bridge_6.png" id="1_eeq7u"]
 [ext_resource type="Texture2D" uid="uid://76ht3efpmjaa" path="res://assets/piso/piso_1.png" id="2_c1tu1"]
@@ -33,6 +33,11 @@
 [ext_resource type="Texture2D" uid="uid://bc7fhy0rhqxb4" path="res://assets/mundo/ruinas/columna 2.png" id="31_x8pvy"]
 [ext_resource type="Texture2D" uid="uid://5vtfmk2lmhfv" path="res://assets/mundo/ruinas/suelo de ruinas.png" id="32_w0lbh"]
 [ext_resource type="Texture2D" uid="uid://grf61g6wi4f6" path="res://assets/mundo/plantas selva/hoja 2.png" id="33_5op84"]
+[ext_resource type="PackedScene" uid="uid://vh08w3iktclu" path="res://enemigos/enemigo_1/enemigo_tipo_1.tscn" id="34_68f0i"]
+[ext_resource type="PackedScene" uid="uid://c5140vedybm61" path="res://enemigos/enemigo_tipo_2.tscn" id="35_er0oj"]
+[ext_resource type="PackedScene" uid="uid://dwjgx501oonje" path="res://enemigos/enemigo_3/puas_1.tscn" id="36_j44m5"]
+[ext_resource type="PackedScene" uid="uid://5vtiy6wi42l8" path="res://enemigos/enemigo_3/puas_2.tscn" id="37_q405o"]
+[ext_resource type="PackedScene" uid="uid://b0cvw1qtmyvku" path="res://enemigos/enemigo_3/puas_4.tscn" id="38_f8ikv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1oqht"]
 size = Vector2(1846.56, 33)
@@ -699,3 +704,175 @@ shape = SubResource("RectangleShape2D_ex3h7")
 [node name="CollisionShape2D31" type="CollisionShape2D" parent="."]
 position = Vector2(78492.6, -2139)
 shape = SubResource("RectangleShape2D_ve1vf")
+
+[node name="eneimago_tipo_1" parent="." instance=ExtResource("34_68f0i")]
+position = Vector2(4447, -150)
+
+[node name="eneimago_tipo_2" parent="." instance=ExtResource("34_68f0i")]
+position = Vector2(4681, -155)
+
+[node name="eneimago_tipo_3" parent="." instance=ExtResource("34_68f0i")]
+position = Vector2(5534, -161)
+
+[node name="eneimago_tipo_4" parent="." instance=ExtResource("34_68f0i")]
+position = Vector2(5712, -148)
+
+[node name="eneimago_tipo_5" parent="." instance=ExtResource("34_68f0i")]
+position = Vector2(5867, -174)
+
+[node name="eneimago_tipo_6" parent="." instance=ExtResource("34_68f0i")]
+position = Vector2(6684, -151)
+
+[node name="eneimago_tipo_7" parent="." instance=ExtResource("34_68f0i")]
+position = Vector2(9096, -152)
+
+[node name="eneimago_tipo_8" parent="." instance=ExtResource("34_68f0i")]
+position = Vector2(8879, -227)
+
+[node name="eneimago_tipo_9" parent="." instance=ExtResource("34_68f0i")]
+position = Vector2(10448, -482)
+
+[node name="eneimago_tipo_10" parent="." instance=ExtResource("34_68f0i")]
+position = Vector2(11762, -698)
+
+[node name="eneimago_tipo_11" parent="." instance=ExtResource("34_68f0i")]
+position = Vector2(12018, -800)
+
+[node name="eneimago_tipo_12" parent="." instance=ExtResource("34_68f0i")]
+position = Vector2(12721, -1094)
+
+[node name="eneimago_tipo_13" parent="." instance=ExtResource("34_68f0i")]
+position = Vector2(14165, -1391)
+
+[node name="eneimago_tipo_14" parent="." instance=ExtResource("34_68f0i")]
+position = Vector2(14643, -1468)
+
+[node name="eneimago_tipo_15" parent="." instance=ExtResource("34_68f0i")]
+position = Vector2(14897, -1384)
+
+[node name="eneimago_tipo_16" parent="." instance=ExtResource("34_68f0i")]
+position = Vector2(16386, -1513)
+
+[node name="enemigo tipo 2" parent="." instance=ExtResource("35_er0oj")]
+position = Vector2(20998, -1266)
+
+[node name="enemigo tipo 3" parent="." instance=ExtResource("35_er0oj")]
+position = Vector2(20730, -1267)
+
+[node name="enemigo tipo 4" parent="." instance=ExtResource("35_er0oj")]
+position = Vector2(21269, -1281)
+
+[node name="eneimago_tipo_17" parent="." instance=ExtResource("34_68f0i")]
+position = Vector2(20868, -1339)
+
+[node name="eneimago_tipo_18" parent="." instance=ExtResource("34_68f0i")]
+position = Vector2(21136, -1347)
+
+[node name="eneimago_tipo_19" parent="." instance=ExtResource("34_68f0i")]
+position = Vector2(25751, -1371)
+
+[node name="eneimago_tipo_20" parent="." instance=ExtResource("34_68f0i")]
+position = Vector2(26592, -1485)
+
+[node name="Area2D" parent="." instance=ExtResource("36_j44m5")]
+position = Vector2(24117, -1358)
+
+[node name="Area2D2" parent="." instance=ExtResource("36_j44m5")]
+position = Vector2(27837, -1334)
+
+[node name="enemigo tipo 5" parent="." instance=ExtResource("35_er0oj")]
+position = Vector2(26219, -1260)
+
+[node name="enemigo tipo 6" parent="." instance=ExtResource("35_er0oj")]
+position = Vector2(25264, -1280)
+
+[node name="eneimago_tipo_21" parent="." instance=ExtResource("34_68f0i")]
+position = Vector2(27315, -1334)
+
+[node name="enemigo tipo 7" parent="." instance=ExtResource("35_er0oj")]
+position = Vector2(30735, -1125)
+
+[node name="enemigo tipo 8" parent="." instance=ExtResource("35_er0oj")]
+position = Vector2(31515, -1131)
+
+[node name="enemigo tipo 9" parent="." instance=ExtResource("35_er0oj")]
+position = Vector2(32279, -1148)
+
+[node name="eneimago_tipo_22" parent="." instance=ExtResource("34_68f0i")]
+position = Vector2(33361, -1161)
+
+[node name="eneimago_tipo_23" parent="." instance=ExtResource("34_68f0i")]
+position = Vector2(33617, -1300)
+
+[node name="enemigo tipo 10" parent="." instance=ExtResource("35_er0oj")]
+position = Vector2(34205, -1120)
+
+[node name="Area2D3" parent="." instance=ExtResource("37_q405o")]
+position = Vector2(39575, -1615)
+rotation = 1.25499
+
+[node name="eneimago_tipo_24" parent="." instance=ExtResource("34_68f0i")]
+position = Vector2(41138, -1318)
+
+[node name="eneimago_tipo_25" parent="." instance=ExtResource("34_68f0i")]
+position = Vector2(41636, -1215)
+
+[node name="eneimago_tipo_26" parent="." instance=ExtResource("34_68f0i")]
+position = Vector2(46139, -1260)
+
+[node name="eneimago_tipo_27" parent="." instance=ExtResource("34_68f0i")]
+position = Vector2(45924, -1156)
+
+[node name="enemigo tipo 11" parent="." instance=ExtResource("35_er0oj")]
+position = Vector2(48305, -1062)
+
+[node name="enemigo tipo 12" parent="." instance=ExtResource("35_er0oj")]
+position = Vector2(48554, -1042)
+
+[node name="eneimago_tipo_28" parent="." instance=ExtResource("34_68f0i")]
+position = Vector2(47714, -1132)
+
+[node name="Area2D4" parent="." instance=ExtResource("38_f8ikv")]
+position = Vector2(62763, -2164)
+
+[node name="Area2D5" parent="." instance=ExtResource("37_q405o")]
+position = Vector2(61573, -2103)
+
+[node name="enemigo tipo 13" parent="." instance=ExtResource("35_er0oj")]
+position = Vector2(63138, -2051)
+
+[node name="enemigo tipo 14" parent="." instance=ExtResource("35_er0oj")]
+position = Vector2(62438, -2041)
+
+[node name="Area2D6" parent="." instance=ExtResource("37_q405o")]
+position = Vector2(65326, -2160)
+
+[node name="Area2D7" parent="." instance=ExtResource("37_q405o")]
+position = Vector2(75039, -2260)
+
+[node name="Area2D8" parent="." instance=ExtResource("37_q405o")]
+position = Vector2(76300, -2250)
+
+[node name="eneimago_tipo_29" parent="." instance=ExtResource("34_68f0i")]
+position = Vector2(77132, -2336)
+
+[node name="eneimago_tipo_30" parent="." instance=ExtResource("34_68f0i")]
+position = Vector2(75662, -2298)
+
+[node name="eneimago_tipo_31" parent="." instance=ExtResource("34_68f0i")]
+position = Vector2(78816, -2346)
+
+[node name="eneimago_tipo_32" parent="." instance=ExtResource("34_68f0i")]
+position = Vector2(78074, -2279)
+
+[node name="enemigo tipo 15" parent="." instance=ExtResource("35_er0oj")]
+position = Vector2(76875, -2208)
+
+[node name="enemigo tipo 16" parent="." instance=ExtResource("35_er0oj")]
+position = Vector2(77893, -2231)
+
+[node name="enemigo tipo 17" parent="." instance=ExtResource("35_er0oj")]
+position = Vector2(79063, -2246)
+
+[node name="enemigo tipo 18" parent="." instance=ExtResource("35_er0oj")]
+position = Vector2(77479, -2198)
