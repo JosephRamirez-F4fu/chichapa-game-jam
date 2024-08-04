@@ -12,16 +12,22 @@ enum Modo {
 	TANQUE,
 }
 
+<<<<<<< HEAD
+=======
 signal update_personaje
 signal muerte
 
+>>>>>>> ea2e24ca3107a0e8c497086c69c6dea2acdd3070
 @onready var animated_sprite = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var collision = $CollisionShape2D
 @onready var cooldown = $cooldown
 @onready var cooldown_cambio_personaje = $cooldown_cambio_personaje
+<<<<<<< HEAD
+=======
 @onready var change = $transformacion
  
+>>>>>>> ea2e24ca3107a0e8c497086c69c6dea2acdd3070
 var flecha = preload("res://proyectil.tscn")
 
 var current_mode := Modo.FLECHERO
@@ -31,28 +37,42 @@ var modos := {
 		"jump": "tanque_jump",
 		"walk": "tanque_walk",
 		"habilidad": "tanque_habilidad",
+<<<<<<< HEAD
+=======
 		"muerte": "tanque_muerte",
+>>>>>>> ea2e24ca3107a0e8c497086c69c6dea2acdd3070
 		"sprite": preload("res://assets/jugador/tanque/tanque.png")
 	},
 	Modo.MAGO: {
 		"jump": "mago_jump",
 		"walk": "mago_walk",
 		"habilidad": "mago_habilidad",
+<<<<<<< HEAD
+=======
 		"muerte": "mago_muerte",
+>>>>>>> ea2e24ca3107a0e8c497086c69c6dea2acdd3070
 		"sprite": preload("res://assets/jugador/curador/curador.png")
 	},
 	Modo.FLECHERO: {
 		"jump": "flechero_jump",
 		"walk": "flechero_walk",
 		"habilidad": "flechero_habilidad",
+<<<<<<< HEAD
+=======
 		"muerte": "flechero_muerte",
+>>>>>>> ea2e24ca3107a0e8c497086c69c6dea2acdd3070
 		"sprite": preload("res://assets/jugador/flechero/arquero.png")
 	}
 }
 
 func _ready():
+<<<<<<< HEAD
+	add_to_group("Jugador")
+	cambiar_modo(0)
+=======
 	cambiar_modo(0)
 	self.add_to_group("Jugador")
+>>>>>>> ea2e24ca3107a0e8c497086c69c6dea2acdd3070
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -100,29 +120,49 @@ func play_jump_animation():
 func play_habilidad_animation():
 	var modo_actual = modos[current_mode]
 	animated_sprite.play(modo_actual["habilidad"])
+<<<<<<< HEAD
+=======
 
 func play_muerte_animation():
 	var modo_actual = modos[current_mode]
 	animated_sprite.play(modo_actual["muerte"])
+>>>>>>> ea2e24ca3107a0e8c497086c69c6dea2acdd3070
 	
 func cambiar_modo(op):
 	if cooldown_cambio_personaje.is_stopped():
 		cooldown_cambio_personaje.start()
 		current_mode = op
+<<<<<<< HEAD
+		match op:
+			0:
+				collision.scale.y = 1.5
+=======
 		$transformacion/AnimationPlayer.play("change")
 		match op:
 			0:
 				collision.scale.y = 1.5
 				$Area2D/CollisionShape2D.scale.y = 1
+>>>>>>> ea2e24ca3107a0e8c497086c69c6dea2acdd3070
 				sprite.hframes = 9
 				sprite.offset.y = -330
 			1:
 				collision.scale.y = 1
+<<<<<<< HEAD
+=======
 				$Area2D/CollisionShape2D.scale.y = 0.6
+>>>>>>> ea2e24ca3107a0e8c497086c69c6dea2acdd3070
 				sprite.hframes = 8
 				sprite.offset.y = -420
 			2:
 				collision.scale.y = 1.8
+<<<<<<< HEAD
+				sprite.hframes = 8
+				sprite.offset.y = -300
+
+		actualizar_modo()
+
+func actualizar_modo():
+=======
 				$Area2D/CollisionShape2D.scale.y = 1.3
 				sprite.hframes = 8
 				sprite.offset.y = -300
@@ -130,6 +170,7 @@ func cambiar_modo(op):
 		actualizar_modo(op)
 
 func actualizar_modo(op):
+>>>>>>> ea2e24ca3107a0e8c497086c69c6dea2acdd3070
 	var modo_actual = modos[current_mode]
 	sprite.texture = modo_actual["sprite"]
 	_on_tiempo_escudo_timeout()
@@ -147,17 +188,28 @@ func _input(event):
 			cambiar_modo(2)
 
 func usar_habilidad():
+<<<<<<< HEAD
+	var modo_actual = modos[current_mode]
 	if cooldown.is_stopped():
 		cooldown.start()
+		play_habilidad_animation()
+=======
+	if cooldown.is_stopped():
+		cooldown.start()
+>>>>>>> ea2e24ca3107a0e8c497086c69c6dea2acdd3070
 		match current_mode:
 			Modo.TANQUE:
 				habilidad_tanque()
 			Modo.MAGO:
 				habilidad_mago()
 			Modo.FLECHERO:
+<<<<<<< HEAD
+				habilidad_flechero()
+=======
 				play_habilidad_animation()
 				habilidad_flechero()
 				
+>>>>>>> ea2e24ca3107a0e8c497086c69c6dea2acdd3070
 
 func habilidad_tanque():
 	if $escudo/TiempoEscudo.is_stopped():
@@ -181,7 +233,10 @@ func habilidad_flechero():
 		new_flecha.direccion = 1
 	new_flecha.position = Vector2(position.x, position.y)
 	get_tree().current_scene.add_child(new_flecha)
+<<<<<<< HEAD
+=======
 	$ataque_flecha.play()
+>>>>>>> ea2e24ca3107a0e8c497086c69c6dea2acdd3070
 
 func _on_cooldown_timeout():
 	cooldown.stop()
@@ -189,6 +244,8 @@ func _on_cooldown_timeout():
 
 func _on_cooldown_cambio_personaje_timeout():
 	cooldown_cambio_personaje.stop() # Replace with function body.
+<<<<<<< HEAD
+=======
 
 func _on_tiempo_escudo_timeout():
 	$escudo/TiempoEscudo.stop() # Replace with function body.
@@ -221,7 +278,11 @@ func _restart_scene() -> void:
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("enemigo") and $escudo/TiempoEscudo.is_stopped():
 		take_damage(21)
+<<<<<<< HEAD
 
 func win():
 	$win.play()
 	set_physics_process(false)
+=======
+>>>>>>> ea2e24ca3107a0e8c497086c69c6dea2acdd3070
+>>>>>>> c526a373b6325a0036dfc23b1ff1ba4bd230d965
