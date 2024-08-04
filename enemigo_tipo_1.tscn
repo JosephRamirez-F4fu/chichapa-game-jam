@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://vh08w3iktclu"]
 
-[ext_resource type="Script" path="res://enemigo_tipo_1.gd" id="1_2ve3k"]
+[ext_resource type="Script" path="res://scripts/enemigo_tipo_1.gd" id="1_2ve3k"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f6w2n"]
 
