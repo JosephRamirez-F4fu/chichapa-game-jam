@@ -5,7 +5,6 @@ const JUMP_VELOCITY = -400.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-var vida = 100
 
 enum Modo {
 	FLECHERO,
@@ -172,6 +171,7 @@ func habilidad_mago():
 		$aura.visible = true
 		$aura/AnimationAura.play("aura")
 		$aura/AudioStreamPlayer.play()
+		get_tree().get_nodes_in_group("barra_vida_player")[0].aumentarVida(20)
 
 func habilidad_flechero():
 	var new_flecha = flecha.instantiate()
